@@ -1,0 +1,93 @@
+INFO	[2023-09-24 10:12:39:410] <14241> START INIPHP cancel (V5036-141209)(OS:Linux2.6.32-754.11.1.el6.x86_64,PHP:5.3.3)
+DEBUG	[2023-09-24 10:12:39:410] <14241> inipayhome:/home1/killdeal/public_html/shop/inicis
+DEBUG	[2023-09-24 10:12:39:410] <14241> debug:false
+DEBUG	[2023-09-24 10:12:39:410] <14241> type:cancel
+DEBUG	[2023-09-24 10:12:39:410] <14241> mid:fourseason
+DEBUG	[2023-09-24 10:12:39:410] <14241> admin:1111
+DEBUG	[2023-09-24 10:12:39:410] <14241> tid:StdpayCARDfourseason20230924092342300211
+DEBUG	[2023-09-24 10:12:39:410] <14241> cancelmsg:주문자 본인 취소-상품옵션 선택 잘못함
+INFO	[2023-09-24 10:12:39:410] <14241> Check Field OK
+INFO	[2023-09-24 10:12:39:410] <14241> PI PUB KEY LOAD OK []
+INFO	[2023-09-24 10:12:39:410] <14241> PG PUB KEY LOAD OK [30]
+INFO	[2023-09-24 10:12:39:410] <14241> MERCHANT PRIV KEY LOAD OK
+INFO	[2023-09-24 10:12:39:410] <14241> MERCHANT PUB KEY LOAD OK [0]
+DEBUG	[2023-09-24 10:12:39:411] <14241> MAKE ENCRYPT OK[<?xml version="1.0" encoding="UTF-8"?>
+<CancelInfo>
+	  <CancelTID>StdpayCARDfourseason20230924092342300211</CancelTID>
+	  <CancelMsg urlencode="1">%C1%D6%B9%AE%C0%DA+%BA%BB%C0%CE+%C3%EB%BC%D2-%BB%F3%C7%B0%BF%C9%BC%C7+%BC%B1%C5%C3+%C0%DF%B8%F8%C7%D4</CancelMsg>
+	  <CancelReason/></CancelInfo>]
+INFO	[2023-09-24 10:12:39:411] <14241> MAKE BODY OK
+INFO	[2023-09-24 10:12:39:412] <14241> SIGN OK
+INFO	[2023-09-24 10:12:39:412] <14241> MAKE HEAD OK
+INFO	[2023-09-24 10:12:39:412] <14241> MSG_TO_PG:[0101500175D SHA1                   0                                      300420fourseason                    StdpayCARDfourseason20230924092342300211<?xml version="1.0" encoding="UTF-8"?>
+<INIpay>
+	  <CancelInfo>
+	    <SessionKey>Tia9gBmTvI29M11MNPG4BjqPWwBtO4Q9e2UlgqYXJ69rxI0UlCV5c1qyXZQA52Ic
+N2NAHj5BUU9cqUI9L+7pu8AR3WjOp1Db1sJJD2OqZcc/rVH9TH2uHVzeEwMsbEd7
+mFEjfZgiwDx3ZhBhjhxDgigjwEvDviMcwPhc5lQm4xCHkeVxbshubA==
+</SessionKey>
+	    <Encrypted>ULBgt93WEVH7lJIxZ0Hf11opqZavg6pXI4rJudaRY5lsGMf//ySahV5qCDzfR++A
+flj3pxMwo3Lb5xDc9dszUt+ySc6N9X7ZB/u94rb/jpt/endw9XJCqyvObdhuI+bk
+x48Oi6UcpbgDMvrpE0XqKEtts0cNqsqPFeZQm0Fs6rrqOBf+awr8l54OQcqbOgcC
+MuXSCFDmmW0xjpJjtxRjDr8vqXh9rW9HseS0cbulQhFNARdc+CPSYwxvY6FJf4CF
+PORzZv2dHQGyo5F0l+w8VE64deV6S0hv7MM4YzqRfH3RFgh/JG6AZY+R8UHGSuBe
+9y4Sg2q3SLk+g0GPhLY6UXCuDlYuEPOwdop5buIGut807KVgSNrolEMjOp5A+NRP
+4vKaqZ53+/U=
+</Encrypted></CancelInfo>
+	  <ReservedInfo>
+	    <MReserved1/>
+	    <MReserved2/>
+	    <MReserved3/></ReservedInfo>
+	  <ManageInfo>
+	    <Language/>
+	    <URL/>
+	    <TXVersion>5036B141209canceLinux     PHPchkfake   2.6.32-754.11.1.el6.x86_64PHP:</TXVersion>
+	    <TXUserID/>
+	    <TXRegNum/></ManageInfo></INIpay>AHZFeyQuGcSCtnGakTvvzV9TckV9aqoO8DV9ziiCufVHcHDzoPZk8Uc/liLTE8RU
+JAJUWnaZBewGjb4vRN3PsEFoxgCr8sUAFdkY00T1a4BpIwlblvw+ejWV3vnG0QxO
+SP+RloZnZgiCPD8stHKTmxzIpnuoiwWWRqByI/+O0B2B
+]
+INFO	[2023-09-24 10:12:39:412] <14241> DNS LOOKUP OK(203.238.37.3:203.238.37.3:34049) laptime:0
+INFO	[2023-09-24 10:12:39:414] <14241> SOCKET CONNECT OK
+INFO	[2023-09-24 10:12:39:414] <14241> SEND OK
+INFO	[2023-09-24 10:12:39:865] <14241> RECV OK
+INFO	[2023-09-24 10:12:39:865] <14241> MSG_FROM_PG:[0093300175D SHA1                   0                                      300430fourseason                    StdpayCARDfourseason20230924092342300211<?xml version="1.0" encoding="UTF-8"?><INIpay>
+<CancelInfo>
+<ResultCode>120000</ResultCode>
+<ResultMsg urlencode="1">%C1%A4%BB%F3%C3%B3%B8%AE%B5%C7%BE%FA%BD%C0%B4%CF%B4%D9.</ResultMsg>
+<SessionKey>AL247x45pQjmDLSHqw17W6KaO+aZxORJ5UHzJe66z8TtuA9xHAFhUQeqF6rNTpq2
++zLT6iO/aRZEZQacz6AF3fEiR1A5/ADZxPmFca5WyjrjNuT8AAuO0YyGxuMzyH4L
+ySnTNh3HdzTeqQ6QONpm0Zstv8bm4iLPQnSN081h0rroV9SWkEGIgdE=
+</SessionKey>
+<Encrypted>xL7HgEabWCj75Vv1+vOIK6dT6zrUBxxCsIWDoDbixhvz2WK7X9lNCXReF60kOfw3
+0WdH3B6BTGEFtSJ6+sHgj/3O66JI55i++sG8+x82Zcdx7txdrxTrjTrOmLUfPVXg
+vaqDln8jawVkdrTgxVs+HfOaLV3DD5uqyBkDGTFG+hKvh60PLFY20NrlJPnVFJJN
+aLtwhQH+Vzbw07kMsqNfFZZmNqWUGo2U3IscOf9amHEMTJ17d2gzUIMrq3pK2Qrp
+r3afnpXQkP3874qRmcykqCDpP27u/ST4iUuDaeTJvOHsax5fVXms3/rnpW0sLHCv
+TXVZkknUx5NcN3uBD5I7tTtX5ryJkOmV
+</Encrypted>
+</CancelInfo>
+<ManageInfo/>
+<ReservedInfo>
+<MReserved1 urlencode="1"/>
+<MReserved2 urlencode="1"/>
+<MReserved3 urlencode="1"/>
+</ReservedInfo>
+</INIpay>
+SIQgexojNwo32cgaFu0dNf3tMuycbwYsgY+Jn6l8aCJpiX3wFehc79ecEsQ2+bFu
+NRxgwF/EKwyknrdLOYhJz1BCXBgrTLin0CYzTN2Yjc62AzptI7hvzCGV5Y1mTnFx
+qS53bTheBFcIk9e5GIOtf2D13zG4JwWAwRHEV7aEor0=
+]
+INFO	[2023-09-24 10:12:39:865] <14241> VERIFY OK
+INFO	[2023-09-24 10:12:39:865] <14241> PARSE HEAD OK
+INFO	[2023-09-24 10:12:39:865] <14241> PARSE BODY OK
+INFO	[2023-09-24 10:12:39:866] <14241> DECRYPT OK
+DEBUG	[2023-09-24 10:12:39:866] <14241> DECRYPT MSG:[<?xml version="1.0" encoding="UTF-8"?><CancelInfo>
+<CancelDate>20230924</CancelDate>
+<CancelTime>101240</CancelTime>
+<ResultCode>120000</ResultCode>
+<ResultMsg urlencode="1">%C1%A4%BB%F3%C3%B3%B8%AE%B5%C7%BE%FA%BD%C0%B4%CF%B4%D9.</ResultMsg>
+</CancelInfo>]
+INFO	[2023-09-24 10:12:39:866] <14241> DECRYPT PARSE OK
+INFO	[2023-09-24 10:12:39:866] <14241> END cancel 정상처리되었습니다. Laptime:[0.457sec]
+INFO	[2023-09-24 10:12:39:866] <14241> ===============================================================

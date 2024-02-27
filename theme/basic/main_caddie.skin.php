@@ -1,0 +1,652 @@
+<?php
+if(!defined('_TUBEWEB_')) exit;
+?>
+
+<style>
+.mtit {text-align:left;}
+.mtit span{padding:0}
+/*
+.bestca_tab1{ margin-left:0px; text-align:left; }
+.bestca_tab1 li{}
+.bestca_tab1 li span {background:#fff; border-radius:30px; color:#636363; font-weight: 700;}
+.bestca_tab1 li.active{ background: #415FCE; }
+.bestca_tab1 li.active span{background-color:#fff;color:#415FCE;}
+*/
+.bestca_tab1 li span::after{
+    content: "";
+    display: inline-block;
+    height: 25px;
+    width: 20px;
+    margin: 0 0 0 8px;
+    vertical-align: bottom;
+}
+.bestca_tab1 li:nth-child(1) span::after{ background: url(./caddieimg/best_d_all.png) no-repeat 0px 0px;}
+.bestca_tab1 li:nth-child(1).active span::after{ background: url(./caddieimg/best_b_all.png) no-repeat 0px 0px;}
+.bestca_tab1 li:nth-child(2) span::after{background: url(./caddieimg/best_d_club.png) no-repeat 0px 0px;}
+.bestca_tab1 li:nth-child(2).active span::after{background: url(./caddieimg/best_b_club.png) no-repeat 0px 0px;}
+.bestca_tab1 li:nth-child(3) span::after{ background: url(./caddieimg/best_d_ball.png) no-repeat 0px 0px; }
+.bestca_tab1 li:nth-child(3).active span::after{ background: url(./caddieimg/best_b_ball.png) no-repeat 0px 0px;}
+.bestca_tab1 li:nth-child(4) span::after{ background: url(./caddieimg/best_d_shirt.png) no-repeat 0px 0px;}
+.bestca_tab1 li:nth-child(4).active span::after{ background: url(./caddieimg/best_b_shirt.png) no-repeat 0px 0px;}
+.bestca_tab1 li a{display:block; height: 32px; width: 118px; line-height:32px; background:#fff; border-radius:30px; text-decoration:none;}
+.bestca_tab1 li.active a{background:none; color:#fff;}
+
+.pr_desc li .nameTag {text-align: start; background-color: #F4F5F8; padding:3px 5px; width:44px; border-radius: 5px; color:#191919; font-weight: 500;}
+.pr_desc li .price .spr{margin-left:15px;}
+
+.timesaleClock {padding-left:30px !important; font-weight:normal !important;}
+.timesaleClock .dot {color:#808080 !important; font-size:15px; padding:5px 1px !important;}
+.realTime {font-weight:normal !important; margin:0 10px !important; background: #EFEFEF; padding: 4px 8px !important; border-radius:5px; font-size:20px !important; font-weight:bold !important; color:#808080 !important;}
+
+/* 메인 비디오컨텐츠 탭*/
+.mediaTab_container{ margin: 0 auto;text-align: center;}
+.mediaTab_tabs{margin: 0px;padding: 0px;list-style: none;text-align: center; border-bottom: 2px solid #DDDDDD;line-height: 0;}
+.mediaTab_tabs li{
+    background: none;
+    color: #222;
+    display: inline-block;
+    padding: 10px 15px;
+    cursor: pointer;
+    font-size:20px;
+    font-weight:700;
+    width:500px;
+    text-align: center;
+    height:30px;
+    border-bottom: 2px solid transparent;
+}
+.mediaTab_tabs li.current{
+    color: #222;
+    border-bottom: 2px solid #313131;
+}
+.mediaTab_content{
+    display: none;
+    background: white;
+    padding: 15px;
+    text-align: center;
+}
+.mediaTab_content.current{
+    display: grid;
+    animation: fadeIn 0.8s;
+}
+.mediaTab_content .btn_link{font-size:15px;font-weight:700; justify-self:right;}
+.mediaTab_content ul{display:grid; width:80%; justify-self:center;justify-content: center; grid-template-columns:repeat(2, 1fr)}
+.mediaTab_content li{display:grid; justify-content: center;}
+.mediaTab_content img{width:500px; border-radius: 10px;}
+.mediaTab_content .mgz_tit{display:none;}
+.mediaTab_content .plan_tit{padding-top:20px; font-weight:bold; font-size:15px;}
+.mediaTab_content .plan_reg{padding-top:10px; padding-bottom:35px; font-weight:bold; font-size:15px; color:#9F9F9F;font-weight: normal;}
+.mediaTab_content .video_wrap{display:grid; width:80%; justify-self:center;justify-content: center; grid-template-columns:repeat(2, 1fr); justify-items: center;}
+.mediaTab_content .video_play {width:500px !important; margin-bottom:50px;}
+.mediaTab_content .video_play img{width:500px !important; margin-bottom:10px;}
+.mediaTab_content .video_play .video_c_title{text-align: start; margin-bottom:20px; width:500px !important; font-weight:bold; font-size:15px;}
+.mediaTab_content .video_play .video_c_reg{text-align: start; margin-bottom:50px; width:500px !important; font-weight:bold; font-size:15px; color:#9F9F9F;font-weight: normal;}
+</style>
+
+<script>
+// 웹접근성향상을 위한 속성 추가
+$(document).ready(function(){
+	$('.golf_mgz_wrap .plan_img img').attr('alt','골프매거진썸네일');
+	$('.golfvideo .video_wrap .video_box iframe').attr('title','골프영상');
+});
+</script>
+
+<?php if(isset($main_banner_hidden) && $main_banner_hidden == true){ echo "<div style='height:20px'></div>"; } ?>
+<!-- 베스트상품 시작 {-->
+<div class="cont_wrap marb20">
+	<h2 class="mtit">
+		<span>
+			<?php echo $default['de_pname_2']; ?>
+		</span>
+		<a id="cate_addr" href="<?php echo TB_SHOP_URL; ?>/listtype.php?type=2">더보기 +</a>
+	</h2>
+	<?php if($default['de_listing_best'] == '1') { ?>
+		<!-- 베스트상품(수동) 카테고리별 베스트 시작 {-->
+		<?php
+		if($default['de_maintype_best']) {
+			$list_best = unserialize(base64_decode($default['de_maintype_best']));
+
+			$list_count = count($list_best);
+			$tab_width = (float)(100 / $list_count);
+		?>
+		<!-- <h2 class="mtit mart65"><span><?php echo $default['de_maintype_title']; ?></span></h2> -->
+		<ul class="bestca_tab1">
+			<?php for($i=0; $i<$list_count; $i++) {
+					$j = $i;
+					if($i == '2'){
+						$j = '2';
+					} else if ($i == '3') {
+						$j = '3';
+					}
+			?>
+			<!-- <li onclick="cate_list('<?php echo trim($list_best[$i]['subj']); ?>')" data-tab="bstab_c<?php echo $j; ?>"><span ><?php echo trim($list_best[$i]['subj']); ?></span></li> -->
+			<li onclick="cate_list('<?php echo $i; ?>')" data-tab="bstab_c<?php echo $j; ?>"><span ><?php echo trim($list_best[$i]['subj']); ?></span></li>
+			<?php } ?>
+		</ul>
+		<div class="bestca pr_desc wli4 mart4">
+			<?php echo get_listtype_cate3($list_best, '327', '327', '4'); ?>
+		</div>
+		<script>
+		$(document).ready(function(){
+			$(".bestca_tab1>li:eq(0)").addClass('active');
+			$("#bstab_c0").show();
+
+			$(".bestca_tab1>li").click(function() {
+				var activeTab = $(this).attr('data-tab');
+				$(".bestca_tab1>li").removeClass('active');
+				$(".bestca ul").hide();
+				$(this).addClass('active');
+				$("#"+activeTab).fadeIn(250);
+			});
+
+			<? if($pt_id == 'golfpang')
+			   {
+			?>
+			       //alert(get_cookie('gp_id'));
+		    <? } ?>
+		});
+
+		//20200520 더 보기가 인기상품으로 가는 문제점 유지보수
+        /*
+		function cate_list(cate_name){
+			console.log("11");
+			var cate = '';
+			if(cate_name == "인기상품"){
+				cate = '';
+				$("#cate_addr").attr("href", "<?php echo TB_SHOP_URL; ?>/listtype.php?type=2&cat="+cate);
+
+			}else if(cate_name =="골프클럽" ){
+				cate = '001';
+				$("#cate_addr").attr("href", "<?php echo TB_SHOP_URL; ?>/listtype.php?type=2&cat="+cate);
+
+			}else if(cate_name =="골프용품" ){
+				cate = '003';
+				$("#cate_addr").attr("href", "<?php echo TB_SHOP_URL; ?>/listtype.php?type=2&cat="+cate);
+
+			}else if(cate_name =="골프패션" ){
+				cate = '002';
+				$("#cate_addr").attr("href", "<?php echo TB_SHOP_URL; ?>/listtype.php?type=2&cat="+cate);
+			}
+		}
+        */
+
+        function cate_list(idx){
+            var cate = "00"+idx;
+            $("#cate_addr").attr("href", "<?php echo TB_SHOP_URL; ?>/listtype.php?type=2&cat="+cate);
+        }
+
+		</script>
+		<?php } ?>
+		<!-- } 베스트상품(수동) 카테고리별 베스트 끝 -->
+	<?php } else if ($default['de_listing_best'] == '0') { ?>
+
+		<!-- 베스트상품(자동) 시작 {-->
+		<?php
+		$list_best = unserialize(base64_decode($default['de_maintype_best']));
+		$list_count = count($list_best);
+
+		//$sql = " select a.index_no, a.simg1, a.gname, a.gpoint, a.ca_id, count(a.gcode) as qty_count from shop_goods a inner join shop_order b on (a.index_no = b.gs_id)  where b.od_time >= subdate(now(), interval 2 week) group by a.gcode desc limit 0, 10 ";
+		$sql = "
+				(SELECT a.index_no AS index_no, a.simg1 AS simg1, a.gname AS gname, a.gpoint AS gpoint, a.ca_id AS ca_id, count(gcode) as qty_count ,a.gcode AS gcode
+				, a.normal_price AS normal_price
+					from shop_goods a 
+					inner join shop_order b on (a.index_no = b.gs_id)
+					WHERE ca_id like '001%'
+					group by a.gcode ORDER BY qty_count DESC LIMIT 10)
+				 UNION ALL
+			 (SELECT a1.index_no AS index_no, a1.simg1 AS simg1, a1.gname AS gname, a1.gpoint AS gpoint, a1.ca_id AS ca_id, count(gcode) as qty_count ,a1.gcode AS gcode
+			 , a1.normal_price AS normal_price
+					from shop_goods a1 
+					inner join shop_order b1 ON (a1.index_no = b1.gs_id)
+					WHERE ca_id like '002%'
+					group BY a1.gcode  ORDER BY qty_count DESC LIMIT 10) 
+				 UNION ALL
+			 ( SELECT a2.index_no AS index_no, a2.simg1 AS simg1, a2.gname AS gname, a2.gpoint AS gpoint, a2.ca_id AS ca_id, count(gcode) as qty_count ,a2.gcode AS gcode
+			 , a2.normal_price AS normal_price
+					from shop_goods a2 
+					inner join shop_order b2 ON (a2.index_no = b2.gs_id)
+					WHERE ca_id like '003%'
+					group BY a2.gcode  ORDER BY qty_count DESC LIMIT 10 ) ";					
+
+		$result = sql_query($sql);
+
+		?>
+		<ul class="bestca_tab1">
+			<?php for($i=0; $i<$list_count; $i++) {
+				$j = $i;
+				if($i == '2'){
+					$j = '3';
+				} else if ($i == '3') {
+					$j = '2';
+				}
+			?>
+			<li data-tab="bstab1_c<?php echo $j; ?>"><span><?php echo trim($list_best[$i]['subj']); ?></span></li>
+			<?php } ?>
+		</ul>
+		<div class="pr_desc wli5 mart5" id="bestgoods">
+			<ul>
+			<?php
+			//echo $sql;
+			for($i=0; $row=sql_fetch_array($result); $i++) {
+				$it_href = TB_SHOP_URL.'/view.php?index_no='.$row['index_no'];
+				$it_image = get_it_image($row['index_no'], $row['simg1'], 327, 327);
+				$it_name = cut_str($row['gname'], 100);
+				$it_price = get_price($row['index_no']);
+				$it_amount = get_sale_price($row['index_no']);
+				$it_point = display_point($row['gpoint']);
+				$it_sum_qty = $row['qty_count'];
+				$it_ca_id = substr($row['ca_id'], 2, 1);
+
+				$is_uncase = is_uncase($row['index_no']);
+				$is_free_baesong = is_free_baesong($row);
+				$is_free_baesong2 = is_free_baesong2($row);
+
+				// (시중가 - 할인판매가) / 시중가 X 100 = 할인률%
+				$it_sprice = $sale = '';
+				if($row['normal_price'] > $it_amount && !$is_uncase) {
+					$sett = ($row['normal_price'] - $it_amount) / $row['normal_price'] * 100;
+					$sale = '<p class="sale">'.number_format($sett,0).'<span>%</span></p>';
+					$it_sprice = display_price2($row['normal_price']);
+				}
+
+
+			?>
+				<li class="bstab1_c0 <?php echo 'bstab1_c'.$it_ca_id; ?>">
+					<div>
+						<a href="<?php echo $it_href; ?>">
+							<dl>
+								<dt><?php echo $it_image; ?></dt>
+								<dd class="pname"><?php echo $it_name; ?></dd>
+								<dd class="price"><?php echo $sale; ?><span class="price_box"><?php echo $it_sprice; ?><?php echo $it_price; ?></span></dd>
+							</dl>
+						</a>
+						<!-- 20191104 찜 주석처리
+						<span class="ic_bx"><span onclick="javascript:itemlistwish('<?php //echo $row['index_no']; ?>');" id="<?php //echo $row['index_no']; ?>" class="<?php //echo $row['index_no'].' '.zzimCheck($row['index_no']); ?>"></span> <a href="<?php //echo $it_href; ?>" target="_blank" class="nwin"></a></span>
+						-->
+					</div>
+				</li>
+			<?php  } ?>
+				<li class="non_item" style="display:none; text-align:center; width:100%; font-size:14px;">해당 카테고리의 상품이 없습니다. </li>
+			</ul>
+		</div>
+		<script>
+		$(document).ready(function(){
+			$(".bestca_tab1>li:eq(0)").addClass('active');
+			$(".bstab1_c0").show();
+
+				$(".bstab1_c1:eq(0)").hide();
+				$(".bstab1_c1:eq(1)").hide();
+				$(".bstab1_c1:eq(2)").hide();
+				$(".bstab1_c1:eq(3)").hide();
+				$(".bstab1_c1:eq(4)").hide();
+				$(".bstab1_c1:eq(5)").hide();
+				$(".bstab1_c1:eq(9)").hide();
+				$(".bstab1_c1:eq(6)").css("margin-left","0");
+
+				$(".bstab1_c2:eq(0)").hide();
+				$(".bstab1_c2:eq(1)").hide();
+				$(".bstab1_c2:eq(2)").hide();
+				$(".bstab1_c2:eq(3)").hide();
+				$(".bstab1_c2:eq(4)").hide();
+				$(".bstab1_c2:eq(5)").hide();
+				$(".bstab1_c2:eq(9)").hide();
+				$(".bstab1_c2:eq(8)").css("margin-left","0");
+
+				$(".bstab1_c3:eq(0)").hide();
+				$(".bstab1_c3:eq(1)").hide();
+				$(".bstab1_c3:eq(2)").hide();
+				$(".bstab1_c3:eq(3)").hide();
+				$(".bstab1_c3:eq(4)").hide();
+				$(".bstab1_c3:eq(5)").hide();
+
+			$(".bestca_tab1>li").click(function() {
+				
+				var activeTab = $(this).attr('data-tab');
+				$(".bestca_tab1>li").removeClass('active');
+				$("#bestgoods ul li").hide();
+				$('.non_item').hide();
+				$(this).addClass('active');
+				$("."+activeTab).fadeIn(250);
+				
+				if(($(".bestca_tab1>li").eq(0)).hasClass("active")) { 	
+					
+					$(".bstab1_c1:eq(0)").hide();
+					$(".bstab1_c1:eq(1)").hide();
+					$(".bstab1_c1:eq(2)").hide();
+					$(".bstab1_c1:eq(3)").hide();
+					$(".bstab1_c1:eq(4)").hide();
+					$(".bstab1_c1:eq(5)").hide();
+					$(".bstab1_c1:eq(9)").hide();
+					$(".bstab1_c1:eq(6)").css("margin-left","0");
+
+					$(".bstab1_c2:eq(0)").hide();
+					$(".bstab1_c2:eq(1)").hide();
+					$(".bstab1_c2:eq(2)").hide();
+					$(".bstab1_c2:eq(3)").hide();
+					$(".bstab1_c2:eq(4)").hide();
+					$(".bstab1_c2:eq(5)").hide();
+					$(".bstab1_c2:eq(9)").hide();
+					$(".bstab1_c2:eq(8)").css("margin-left","0");
+
+					$(".bstab1_c3:eq(0)").hide();
+					$(".bstab1_c3:eq(1)").hide();
+					$(".bstab1_c3:eq(2)").hide();
+					$(".bstab1_c3:eq(3)").hide();
+					$(".bstab1_c3:eq(4)").hide();
+					$(".bstab1_c3:eq(5)").hide();
+
+				} else if(!($(".bestca_tab1>li").eq(0)).hasClass("active")) {
+					$(".bstab1_c1:eq(6)").css("margin-left","19px");
+					$(".bstab1_c2:eq(8)").css("margin-left","19px");
+				}
+				if(!$("#bestgoods ul li").hasClass(activeTab)) {
+					$('.non_item').fadeIn(250);
+				}
+			   });
+		});
+		</script>
+		<!-- } 베스트상품(자동)  끝 -->
+	<?php  } ?>
+</div>
+<!-- } 베스트상품  끝 -->
+
+
+<!-- 큰 배너 배경 및 문구 시작 { -->
+<?php echo mask_banner(7, $pt_id); ?>
+<!-- } 큰 배너 배경 및 문구 끝 -->
+
+<!-- 인기상품 시작 { -->
+<!-- <div class="cont_wrap mart60 marb99">
+	<h2 class="mtit"><span><?php echo $default['de_pname_4']; ?></span></h2>
+	<?php echo get_listtype_skin("4", '235', '235', '12', 'wli4 mart5'); ?>
+</div> -->
+<!-- } 인기상품 끝 -->
+
+<!-- 타임특가 시작 { -->
+<?php
+$sql_search = " and 1!=1 ";
+$ts = sql_fetch("select * from shop_goods_timesale where ts_sb_date <= NOW() and ts_ed_date >= NOW() ");
+if( isset($ts) ){
+    $sb_date = $ts['ts_sb_date'];
+    $ed_date = $ts['ts_ed_date'];
+    $ts_list_code = explode(",", $ts[ts_it_code]); // 배열을 만들고
+    $ts_list_code = array_unique($ts_list_code); //중복된 아이디 제거
+    $ts_list_code = array_filter($ts_list_code); // 빈 배열 요소를 제거
+    $ts_list_code = implode(",",$ts_list_code );
+    $sql_search = " and index_no in ( $ts_list_code )";
+    $sql_order = " order by field ( index_no, $ts_list_code ) ";
+
+	$time_h = substr($ed_date, 11, 2);
+	$time_i = substr($ed_date, 14, 2);
+	$time_s = "00";
+
+	// 상품 종료 기간
+	$time_y = substr($ed_date, 0, 4);
+	$time_m = substr($ed_date, 5, 2);
+	$time_d = substr($ed_date, 8, 2);
+	$time_h = substr($ed_date, 11, 2);
+	$time_i = substr($ed_date, 14, 2);
+	$time_s = "00";
+	
+	$ed_date = mktime($time_h, $time_i, $time_s, $time_m, $time_d, $time_y);
+	$t = getdate($ed_date);
+
+}
+
+function sql_goods_list_time($sql_search=''){
+	global $pt_id, $auth_good;
+
+	if($auth_good) // 가맹점 상품판매권한이 있나?
+		$addsql = " or ( use_aff = '1' and mb_id = '$pt_id' ) ";
+
+	if($pt_id =='golf')
+	{
+
+	   $sql = " from shop_goods
+			where shop_state = '0'
+			  and (use_aff = '0'{$addsql})
+			  and find_in_set('$pt_id', use_hide) = '0'
+			  {$sql_search} ";
+	}
+	else
+	{
+          $sql = " from shop_goods
+			where shop_state = '0'
+			  and (use_aff = '0'{$addsql})
+			  and find_in_set('$pt_id', use_hide) = '0'
+			  and index_no NOT IN ('7688','7678','7675','7676','7671','7668','7667','7677','7660','7665','7679','7681','7683','7686','7680','7682','7684','7685','7687','7674','7673','7672','7670','7669','7663','7659','7661','7662','7664','7666','8177','8176','8175','8174','8173','8267')
+			{$sql_search} ";
+	}
+
+	return $sql;
+}
+
+$sql_common = sql_goods_list_time($sql_search);
+
+
+
+
+// 테이블의 전체 레코드수만 얻음
+$sql = " select count(*) as cnt $sql_common ";
+$row = sql_fetch($sql);
+$total_count = $row['cnt'];
+
+$sql = " select * $sql_common $sql_order limit 4";
+$result = sql_query($sql);
+
+if( $total_count > 0 ) {
+?>
+<div class="cont_wrap marb20">
+    <div class="pr_desc wli4 mart10">
+    <div class="marb10" style="position:relative">
+	<h2 class="mtit timesale">
+		<span>타임특가</span> 
+		<span class="timesaleClock">
+			<span class="dot days" style="font-size:18px">
+				<?php echo 00 ?>
+			</span>
+			<span class="dot" style="font-size:18px">
+				일
+			</span>
+			<span class="realTime hour">
+				<?php echo 00 ?>
+			</span>
+			<span class="dot">
+				:
+			</span>
+			<span class="realTime min">
+				<?php echo 00 ?>
+			</span>
+			<span class="dot">
+				:
+			</span>
+			<span class="realTime sec">
+				<?php echo 00 ?>
+			</span>
+		</span>
+	</h2> 
+	
+	<!--<img src="/img/timesale_top_banner2.png">-->
+    <a style="position:absolute; top:0px; right:0px; z-index:100; line-height: 25px; font-size: 15px; text-decoration: none; font-weight: 600;" href="    <?php echo TB_SHOP_URL; ?>/timesale.php">더보기 +</a>
+    </div>
+        <ul>
+        <?php
+    for($i=0; $row=sql_fetch_array($result); $i++) {
+        $it_href = TB_SHOP_URL.'/view.php?index_no='.$row['index_no'];
+        $it_image = get_it_image($row['index_no'], $row['simg1'], 327,327);
+        $it_name = cut_str($row['gname'], 100);
+        $it_price = get_price($row['index_no']);
+        $it_amount = get_sale_price($row['index_no']);
+        $it_point = display_point($row['gpoint']);
+
+        $is_uncase = is_uncase($row['index_no']);
+        $is_free_baesong = is_free_baesong($row);
+        $is_free_baesong2 = is_free_baesong2($row);
+
+        // (시중가 - 할인판매가) / 시중가 X 100 = 할인률%
+        $it_sprice = $sale = '';
+        if($row['normal_price'] > $it_amount && !$is_uncase) {
+            $sett = ($row['normal_price'] - $it_amount) / $row['normal_price'] * 100;
+            $sale = '<p class="sale">'.number_format($sett,0).'<span>%</span></p>';
+            $it_sprice = display_price2($row['normal_price']);
+        }
+
+    ?>
+            <li>
+                <!-- <a href="<?php echo TB_SHOP_URL; ?>/timesale.php"> -->
+                <a href="<?php echo $it_href; ?>">
+                <?php if(strpos($it_price,"품절") || strpos($it_price,"중지")){ ?>
+                    <div class="soldout_layer"></div>
+                <?php } ?>
+                    <dl>
+                        <dt><?php echo $it_image;?></dt>
+                        <dd class="pname"><?php echo $it_name; ?></dd>
+                        <dd class="price"><?php echo $sale; ?>&nbsp;<span class="price_box"><?php echo $it_price ?><?php echo $it_sprice; ?></dd>
+                        <dd class="nameTag">타임특가</dd>
+                    </dl>
+                </a>
+            </li>
+    <?php } ?>
+        </ul>
+    </div>
+</div>
+<?php } // if  ?>
+<!-- } 타임특가 끝 -->
+
+<!-- 추천상품 시작 { -->
+<div class="cont_wrap marb20">
+	<h2 class="mtit"><span>강력추천</span><a href="<?php echo TB_SHOP_URL; ?>/listtype.php?type=5">더보기 +</a></h2>
+	<?php echo get_listtype_skin3("5", '327', '327', '8', 'wli4 mart40'); ?>
+</div>
+<!-- } 추천상품 끝 -->
+
+
+<!--  신규 미디어 시작 -->
+<div class="cont_wrap marb20">
+	<h2 class="mtit media_cont"><span>미디어 콘텐츠</span></h2>
+	<div class="mediaTab_box">
+		<ul class="mediaTab_tabs">
+			<li class="mediaTab_link current" data-tab="tab-1">매거진</li>
+			<li class="mediaTab_link" data-tab="tab-2">영상</li>
+		</ul>
+	</div>			
+		
+		<div id="tab-1" class="mediaTab_content current">
+			<a class="btn_link" href="<?php echo "bbs"; ?>/list.php?boardid=43">더보기 +</a>
+			<ul>
+				<?php echo board_mgz_latest2(43, 100, 4, $pt_id); ?>
+			</ul>
+		</div>
+		<div id="tab-2" class="mediaTab_content">
+			<a class="btn_link" href="<?php echo "bbs"; ?>/list.php?boardid=42">더보기 +</a>
+			<div class="video_wrap">
+				<?php echo board_video_latest3(42, 100, 4, $pt_id); ?>
+			</div>
+		</div>
+	</div>
+
+<!--  신규 미디어 끝  -->
+
+
+
+
+<!-- 신상품 시작 { -->
+<div class="cont_wrap marb20">
+	<h2 class="mtit"><span><?php echo $default['de_pname_3']; ?></span><a href="<?php echo TB_SHOP_URL; ?>/listtype.php?type=3&page_rows=&sort=index_no&sortodr=desc">더보기 +</a></h2>
+	<?php echo get_listtype_skin3("3", '327', '327', '8', 'wli4 mart40'); ?>
+</div>
+<!-- } 신상품 끝 -->
+
+
+<br>
+
+<script>
+$(document).ready(function(){
+	$('.mediaTab_tabs li').click(function(){
+		var tab_id = $(this).attr('data-tab');
+		$('.mediaTab_tabs li').removeClass('current');
+		$('.mediaTab_content').removeClass('current');
+		$(this).addClass('current');
+		$("#"+tab_id).addClass('current');
+	})
+
+
+
+	//timecount
+
+	var targetDate = new Date(<?=$t[year];?>,<?=$t[mon]-1;?>,<?=$t[mday];?>,<?=$t[hours];?>,<?=$t[minutes];?>,<?=$t[seconds];?>);
+	var targetInMS = targetDate.getTime();
+
+	var oneSec = 1000;
+	var oneMin = 60 * oneSec;
+	var oneHr = 60 * oneMin;
+	var oneDay = 24 * oneHr;
+
+	function countDown() {
+		var nowInMS = new Date().getTime();
+		var diff = targetInMS - nowInMS;
+		//if (diff < 0) { location.reload(); return; }
+
+		var scratchPad = diff / oneDay;
+		var daysLeft = Math.floor(scratchPad);
+		// hours left
+		diff -= (daysLeft * oneDay);
+		scratchPad = diff / oneHr;
+		var hrsLeft = Math.floor(scratchPad);
+		// minutes left
+		diff -= (hrsLeft * oneHr);
+		scratchPad = diff / oneMin;
+		var minsLeft = Math.floor(scratchPad);
+		// seconds left
+		diff -= (minsLeft * oneMin);
+		scratchPad = diff / oneSec;
+		var secsLeft = Math.floor(scratchPad);
+		// now adjust time
+		$('.days').html(daysLeft);
+		$('.hour').html(hrsLeft);
+		$('.min').html(minsLeft);
+		$('.sec').html(secsLeft);
+	}
+
+	setInterval(() => countDown(), 1000);
+
+	/*
+    setInterval(function time(){
+		$('.hour').html(hours);
+		$('.min').html(min);
+		$('.sec').html(sec);
+
+		//시간 초기화
+		var d = new Date();
+		var hours = 24 - d.getHours();
+		var min = 60 - d.getMinutes();
+		var sec = 60 - d.getSeconds();
+		//분이 있으면 시 반올림
+		if(min =='00'){
+			hours = 24 - d.getHours();
+		}else{
+			hours = 23 - d.getHours();
+		}
+		//초가 있으면 분 반올림        
+		if(sec =='00'){
+			min = 60 - d.getMinutes();
+		}else{
+			min = 59 - d.getMinutes();
+		}
+		//1자리수라면 0을 붙혀라
+		if((hours + '').length == 1){
+			hours = '0' + hours;
+		}
+		if((min + '').length == 1){
+			min = '0' + min;
+		}
+		if((sec + '').length == 1){
+			sec = '0' + sec;
+		}
+		$('.hour').html(hours);
+		$('.min').html(min);
+		$('.sec').html(sec);
+    }, 1000);
+	*/
+
+})
+</script>

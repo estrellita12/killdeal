@@ -1,0 +1,93 @@
+INFO	[2022-08-27 02:02:22:139] <17153> START INIPHP cancel (V5036-141209)(OS:Linux2.6.32-754.11.1.el6.x86_64,PHP:5.3.3)
+DEBUG	[2022-08-27 02:02:22:139] <17153> inipayhome:/home1/killdeal/public_html/shop/inicis
+DEBUG	[2022-08-27 02:02:22:139] <17153> debug:false
+DEBUG	[2022-08-27 02:02:22:139] <17153> type:cancel
+DEBUG	[2022-08-27 02:02:22:139] <17153> mid:fourseason
+DEBUG	[2022-08-27 02:02:22:139] <17153> admin:1111
+DEBUG	[2022-08-27 02:02:22:139] <17153> tid:INIMX_CARDfourseason20220827014556205257
+DEBUG	[2022-08-27 02:02:22:139] <17153> cancelmsg:주문자 본인 취소-상품옵션 선택 잘못함
+INFO	[2022-08-27 02:02:22:139] <17153> Check Field OK
+INFO	[2022-08-27 02:02:22:139] <17153> PI PUB KEY LOAD OK []
+INFO	[2022-08-27 02:02:22:139] <17153> PG PUB KEY LOAD OK [30]
+INFO	[2022-08-27 02:02:22:140] <17153> MERCHANT PRIV KEY LOAD OK
+INFO	[2022-08-27 02:02:22:140] <17153> MERCHANT PUB KEY LOAD OK [0]
+DEBUG	[2022-08-27 02:02:22:140] <17153> MAKE ENCRYPT OK[<?xml version="1.0" encoding="UTF-8"?>
+<CancelInfo>
+	  <CancelTID>INIMX_CARDfourseason20220827014556205257</CancelTID>
+	  <CancelMsg urlencode="1">%C1%D6%B9%AE%C0%DA+%BA%BB%C0%CE+%C3%EB%BC%D2-%BB%F3%C7%B0%BF%C9%BC%C7+%BC%B1%C5%C3+%C0%DF%B8%F8%C7%D4</CancelMsg>
+	  <CancelReason/></CancelInfo>]
+INFO	[2022-08-27 02:02:22:141] <17153> MAKE BODY OK
+INFO	[2022-08-27 02:02:22:141] <17153> SIGN OK
+INFO	[2022-08-27 02:02:22:141] <17153> MAKE HEAD OK
+INFO	[2022-08-27 02:02:22:141] <17153> MSG_TO_PG:[0101500175D SHA1                   0                                      300420fourseason                    INIMX_CARDfourseason20220827014556205257<?xml version="1.0" encoding="UTF-8"?>
+<INIpay>
+	  <CancelInfo>
+	    <SessionKey>D0MUXuGmcecYIknsHubMcpACnY6vQD7yrauzrwrpu8jsoAzxL27uNSdesGbISsy6
+mz5ZX33sN6sdwvCxlUUOey1d7kL295yWLdiEftkAe54L37rHZXgGtpQMkwDjtSWL
+nr3QEfsNlTMohGYWEojf1LjwIJ/xk7zaSLxp8gzZvExTSX7YnhLqVA==
+</SessionKey>
+	    <Encrypted>2y+mc9FKvkajOzKZIEv2PzaJXnbeVKrCm1ysaWBvCgV8pbEIw6J8GRW1OAr3oZAj
++htPX99LMqkxKAkpvwQQ/myQhgfhuW9G5p6aMLpv1HU1+t3Nh1aYeZb7gfAigBpy
+r2Nr7/JNdXciNT0Ym1z3hIfDHNqWIm57xsEXNXFIHVkXXEDTmsp6FAeXEHKrhAFS
+9Z1DCIIBijOKZ+XI/v+EHmz150Iwb/Q21M5Ili1r17VRRyCvK53yNAclljho/FUY
+rwUfIrx02oQIAdDx7DIkz34sWI3ryyjE2CLpB4peal8YEtSRI1Pu6KqI//PyPM3d
+IrLtvbBP1xEBruUQeT06ZO2a0SZIOwtfWIL4g28hp+XamF+JOT+JR7YRA8gLwzZ0
+wUI5J20TOZg=
+</Encrypted></CancelInfo>
+	  <ReservedInfo>
+	    <MReserved1/>
+	    <MReserved2/>
+	    <MReserved3/></ReservedInfo>
+	  <ManageInfo>
+	    <Language/>
+	    <URL/>
+	    <TXVersion>5036B141209canceLinux     PHPchkfake   2.6.32-754.11.1.el6.x86_64PHP:</TXVersion>
+	    <TXUserID/>
+	    <TXRegNum/></ManageInfo></INIpay>AHyRp7S+qJEyhkwzdXHQQemq3LmO2rtaLXEvxOAMWkOnGogO1mcKJR90fme7Tp/e
+FvarbZ+xj86Bd24sT8RKGwxArR65rtLdkTfK5jbtbFYEJP7UAi0Lg45M1Iz2oSgf
+moVRp+32iWlfSwgFTDeXbvvgkd9aFwjlymDObhBqRD/N
+]
+INFO	[2022-08-27 02:02:22:141] <17153> DNS LOOKUP OK(203.238.37.3:203.238.37.3:34049) laptime:0
+INFO	[2022-08-27 02:02:22:143] <17153> SOCKET CONNECT OK
+INFO	[2022-08-27 02:02:22:143] <17153> SEND OK
+INFO	[2022-08-27 02:02:22:577] <17153> RECV OK
+INFO	[2022-08-27 02:02:22:577] <17153> MSG_FROM_PG:[0093300175D SHA1                   0                                      300430fourseason                    INIMX_CARDfourseason20220827014556205257<?xml version="1.0" encoding="UTF-8"?><INIpay>
+<CancelInfo>
+<ResultCode>120000</ResultCode>
+<ResultMsg urlencode="1">%C1%A4%BB%F3%C3%B3%B8%AE%B5%C7%BE%FA%BD%C0%B4%CF%B4%D9.</ResultMsg>
+<SessionKey>AFAzyc4FKEbqYgaNQw6PYD/XGZFbs21wFs4vMbpT6Nbd+FmtvIiA7lZ/kfHyj6sU
+j0MCYGHGjR27HWnQz3oJ/VFLs3ZwEFZZJkjokesYi9ieSYzLER3O3IwxDIzmisjP
+H4ex4m3rLpU4iFejGuvC/p8CSEPLBcKGJPMeNY8e9Dnhg5WxVsS8hhM=
+</SessionKey>
+<Encrypted>Hi2gDolh2nH4mHKDcCfMMjLOr01NCI1tUDflDY5VLkWqdkF9vtJpVfyFjQERf3yP
+/w4oVACt112k9wTjOC3337Rh/J+BI/dH92K4lZwPqXgPJIRMPTZJmU52/SeXY3St
+71IC33g0CDnE/dO5A9XMVuJ8/UMo4ONwX50aZ5Y7tPKGHY4rd43rcM+cUlNMWQBF
+54/f/CkLu6kFNTb62Ady4OBZYCr2VpqAaauTFs721mgb6rR9EZas8DH7JaBi3JLD
+b9NTou9vTNangvlNrTF1vx/wVkyY/CMGUgUmU2tYkMhByq8SQu3R0kEEObDYWx1p
+8ljzQEPDNjU0w84+hYI/g9kiPRAYFinS
+</Encrypted>
+</CancelInfo>
+<ManageInfo/>
+<ReservedInfo>
+<MReserved1 urlencode="1"/>
+<MReserved2 urlencode="1"/>
+<MReserved3 urlencode="1"/>
+</ReservedInfo>
+</INIpay>
+NhdClrEw2g6gJZJ9TCCukuqWe+kSAbyYMr2o+WA9g8TerDy0At1u1gyjyS7a9g+V
+8XxRrcHL/oBonKhdMqurR/N/Rz35sX2484yzOOHrtlI4sNx0Kf5rFVXndyvwD9YE
+700h9aqMUR9g5XMtUySbm+T+f05AG6ZYxPGCq4H6y7s=
+]
+INFO	[2022-08-27 02:02:22:578] <17153> VERIFY OK
+INFO	[2022-08-27 02:02:22:578] <17153> PARSE HEAD OK
+INFO	[2022-08-27 02:02:22:578] <17153> PARSE BODY OK
+INFO	[2022-08-27 02:02:22:578] <17153> DECRYPT OK
+DEBUG	[2022-08-27 02:02:22:578] <17153> DECRYPT MSG:[<?xml version="1.0" encoding="UTF-8"?><CancelInfo>
+<CancelDate>20220827</CancelDate>
+<CancelTime>020222</CancelTime>
+<ResultCode>120000</ResultCode>
+<ResultMsg urlencode="1">%C1%A4%BB%F3%C3%B3%B8%AE%B5%C7%BE%FA%BD%C0%B4%CF%B4%D9.</ResultMsg>
+</CancelInfo>]
+INFO	[2022-08-27 02:02:22:579] <17153> DECRYPT PARSE OK
+INFO	[2022-08-27 02:02:22:579] <17153> END cancel 정상처리되었습니다. Laptime:[0.44sec]
+INFO	[2022-08-27 02:02:22:579] <17153> ===============================================================

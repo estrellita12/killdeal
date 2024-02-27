@@ -1,0 +1,205 @@
+@charset "utf-8";
+@import "normalize.css";
+
+#wrap {overflow-x:hidden;}
+.area_tit {font-size:17px;font-weight:bold;padding-top:12px;padding-bottom:16px;font-weight:bold;}
+
+/* 단일 */
+.time_sale_area {padding:20px 20px 0 20px;}
+.time_sale_box,.product_box2 {overflow:visible;}
+.time_sale_box .swiper-button-prev {
+	left:-14px !important;
+}
+.time_sale_box .swiper-button-next {
+	right:-14px !important;
+}
+
+.time_sale_box .swiper-button-prev,
+.time_sale_box .swiper-button-next {
+	width:28px;
+	height:28px;
+	margin-top:-60px;
+	border-radius:50%;
+}
+
+.time_sale_box .swiper-button-prev.swiper-button-disabled  {
+	opacity:0.4;
+}
+
+.time_sale_box .swiper-button-prev:after,
+.time_sale_box .swiper-button-next:after {
+	display:none;
+}
+
+.time_sale_box .swiper-button-prev {
+	background:url(../../images/bsj/btn_slide_prev.png);
+	background-size:auto 28px;
+	z-index:100;
+	box-shadow:1px 2px 5px 1px rgba(0,0,0,0.3);
+}
+
+.time_sale_box .swiper-button-next {
+	background:url(../../images/bsj/btn_slide_next.png);
+	background-size:auto 28px;
+	z-index:100;
+	box-shadow:-1px 2px 5px 1px rgba(0,0,0,0.3);
+}
+
+.time_sale_box .swiper-container {
+    overflow:visible;
+}
+.hidden_container {overflow:hidden;}
+.time_sale_list li > a {display:block;}
+.time_sale_list li > a span img {border-radius:8px;}
+.time_sale_list li > a > span {border-radius:8px;display:block;}
+.time_sale_txtbox {
+    margin-top:12px;
+    display:block;
+}
+.time_sale_tit {
+    font-size:15px;
+    color:#333;
+    font-weight:300;
+    line-height:1.5;
+    white-space:pre-wrap !important;
+    overflow:hidden;
+    text-overflow:ellipsis;
+    display:-webkit-box;
+    -webkit-line-clamp:2;
+    -webkit-box-orient:vertical;
+    height:44px;
+}
+.sale_price_box {display:block;margin-top:10px;}
+.sale_price_box > span {vertical-align:top;}
+.sale_percent {display:inline-block;font-size:13px;color:#ff0000;font-weight:500;}
+.list_price {display:inline-block;font-size:12px;color:#666;text-decoration:line-through;text-decoration-color:inherit;margin-left:5px;}
+.sale_price {display:block;font-size:15px;color:#222;margin-top:8px;}
+.sale_price > span {color:#ff0000;font-weight:500;}
+.option_box {
+    font-size:0;
+    margin-top:8px;
+    display:block;
+}
+.option_box > span {
+    display:inline-block;
+    font-size:10px;
+    font-weight:500;
+    color:#fff;
+    background:#ff0000;
+    border-radius:2px;
+    margin-right:4px;
+    padding:4px;
+}
+
+/* 베스트 상품 */
+.best_product_area {padding:20px;}
+.best_product_tab {margin-top:4px;background:#f8f8f8;border-radius:4px;}
+.best_product_tab ul {font-size:0;}
+.best_product_tab ul li {width:25%;display:inline-block;}
+.best_product_tab ul li a {display:block;border:1px solid #f8f8f8;color:#333;font-size:13px;font-weight:300;text-align:center;padding:15px 0;border-radius:4px;}
+.best_product_tab ul li.on a {display:block;border:1px solid #57a151;color:#57a151;font-size:14px;font-weight:500;border-radius:4px;}
+
+.product_tab_content {display:none;}
+.product_tab_content.on {display:block;}
+.product_tab_content ul {font-size:0;}
+.product_tab_content ul li {display:inline-block;width:50%;vertical-align:top;margin-top:20px;}
+.product_tab_content ul li a {display:block;}
+.product_tab_content ul li:nth-child(2n-1) a {margin-right:7px;}
+.product_tab_content ul li:nth-child(2n) a {margin-left:7px;}
+.product_tab_content ul li a > span {display:block;}
+.product_tab_content ul li a > span:first-of-type {border-radius:8px;}
+.product_tab_content ul li a > span:first-of-type img{border-radius:8px;}
+.btn_area {margin-top:25px;}
+.btn_area a {display:block;text-align:center;border:1px solid #ddd;line-height:40px;font-weight:500;border-radius:4px;}
+
+/* 약관 */
+h2.terms_tit {font-size:17px;font-weight:bold;padding:16px 20px;}
+.terms_area {border-top:1px solid #ddd;}
+.terms_area > ul > li{border-bottom:1px solid #ddd;}
+.terms_area > ul > li > label {font-size:15px;font-weight:300;display:block;padding:8px 20px;}
+.terms_area > ul > li > label > input {-webkit-appearance:checkbox;}
+.terms_area > ul > li > ul > li {border-top:1px solid #ddd;background:#f4f4f4;}
+.terms_area > ul > li > ul > li > a {position:relative;}
+.terms_area > ul > li > ul > li > a > label {font-size:15px;font-weight:300;display:block;padding:8px 20px;position:relative;}
+.terms_area > ul > li > ul > li > a > label:after {
+    content:'';
+    position:absolute;
+    right:20px;
+    background:url(../../images/bsj/ico_terms_arrow.png)0 0 no-repeat;
+    background-size:8px auto;
+    width:8px;
+    height:14px;
+    top:10px;
+}
+.terms_area > ul > li > ul > li > a > label > span {
+    content:'';
+    position:absolute;
+    right:0px;
+    width:50px;
+    height:30px;
+    top:2px;
+    z-index: 2;
+}
+.terms_area > ul > li > ul > li > a > div:after {
+    content:'';
+    position:absolute;
+    right:0px;
+    background:url(../../images/bsj/ico_terms_arrow.png) no-repeat;
+    background-position: center;
+    background-size:8px auto;
+    width:50px;
+    height:30px;
+    top:2px;
+}
+.terms_area > ul > li > ul > li > a > label > input {-webkit-appearance:checkbox;}
+.footer_btn_area {position:fixed;bottom:0;width:100%;font-size:0;}
+.footer_btn_area.two a {
+    font-weight:300;
+    display:inline-block;
+    font-size:17px;
+    text-align:center;
+    line-height:56px;
+    height:60px;
+    font-size:17px;
+    border-radius:0px;
+    color:#fff;
+}
+.footer_btn_area.two a.btn_bg_grey {
+    width:30%;
+    background-color:#888888;
+}
+.footer_btn_area.two a.btn_bg_green {
+    width:70%;
+    background:#7fc158;
+}
+.terms_detail_area {padding:20px;}
+.terms_detail_area h3 {font-size:17px;font-weight:500;padding-bottom:12px;}
+.terms_detail_area p {font-size:14px;font-weight:300;line-height:1.5;}
+
+.footer_btn_area a {
+    font-weight:300;
+    display:block;
+    font-size:17px;
+    text-align:center;
+    line-height:56px;
+    height:60px;
+    font-size:17px;
+    border-radius:0px;
+    color:#fff;
+}
+.footer_btn_area a.btn_bg_green {
+    background:#7fc158;
+}
+
+@media (max-width:360px){
+
+}
+@media (max-width:350px){
+	
+}
+@media (max-width:330px){
+	
+}
+.desc {
+    display:none;
+}

@@ -1,0 +1,167 @@
+<link rel="stylesheet" type="text/css" href="https://dodamgolf.co.kr/theme/basic/dodam/css/layout.css" />
+<link rel="stylesheet" type="text/css" href="https://dodamgolf.co.kr/theme/basic/dodam/css/common.css" />
+
+<style>
+ #commentWrapper { /* required to avoid jumping */      
+      position: absolute;
+      left: 50%;
+      margin-left: -700px;
+      z-index:999;
+    }
+#comment {
+	  display:none;
+      position: absolute;
+      bottom: 100px;
+    }
+    #comment.fixed {
+	  display:block;
+      position: fixed;
+      bottom: 100px;
+    }
+</style>
+<!-- 고정영역 스크립트 -->
+<script>
+/* [cathy]무조건 보이게 수정 (190725 @서준용)
+
+$(function () {
+  var msie6 = $.browser == 'msie' && $.browser.version < 7;
+  if (!msie6) {
+    var top = $('#comment').offset().top - parseFloat($('#comment').css('margin-top').replace(/auto/, 0));
+    $(window).scroll(function (event) {
+      // what the y position of the scroll is
+      var y = $(this).scrollTop();
+      
+      // whether that's below the form
+      if (y > top) {
+        // if so, ad the fixed class
+        $('#comment').addClass('fixed');
+      } else {
+        // otherwise remove it
+        $('#comment').removeClass('fixed');
+      }
+    });
+  }  
+});
+*/
+</script>
+<script type="text/javascript">
+    $(document).ready(function() {
+
+	  $('#comment').addClass('fixed');			//[cathy]무조건 보이게 수정 (190725 @서준용)
+      
+	  $('#close').click(function(e) {
+		e.preventDefault()
+        $('#commentWrapper').hide();
+      });
+    });
+ </script>
+<!-- 고정영역 스크립트 -->
+
+<div class="ddheader" id="ddheader" >    
+
+	<!--유틸-->			
+	<div class="util">
+		<ul>
+		<!--{? userInfo.member_seq }-->
+			<!-- 등급명 추가 @SJY-->
+			<li>
+				<!--<span style="font-size:13px; padding:0 8px 0 10px">님</span>-->
+			</li>
+			<!--<li><a href="https://dodamchon.co.kr/promotion/coupon_membermonths" target='_self'>등급별 할인쿠폰</a></li>-->
+			<!--
+			<li>
+				<a href="https://dodamchon.co.kr/login_process/logout" onclick="FB.logout(function(response) {logout();});return false; "  target='_self'>로그아웃</a>{:}<a href="../login_process/logout" target= "actionFrame" target='_self'>로그아웃</a>{/}
+			</li>
+			-->
+			<?php
+			//20191218 도담골프 헤더 수정
+			$tnb = array();
+			if($is_member) {
+				$tnb[] = '<li><a href="'.TB_BBS_URL.'/logout.php">로그아웃</a></li>';
+			
+			} else {
+				$tnb[] = '<li><a href="https://dodamchon.co.kr/member/login">로그인</a></li>';
+				$tnb[] = '<li><a href="https://dodamchon.co.kr/member/agreement">회원가입</a></li>';
+			}
+			$tnb_str = implode(PHP_EOL, $tnb);
+			echo $tnb_str;
+			?>
+			<!--<li><a href="https://dodamchon.co.kr/mypage/myinfo" target='_self'>정보수정</a></li>-->
+		<!--{ : }-->
+			<!--<li><a href="https://dodamchon.co.kr/member/login" target='_self'>로그인</a></li>-->
+		<!--<li><a href="https://dodamchon.co.kr/member/agreement" target='_self'>회원가입</a></li>-->
+		<!--{ / }-->
+			<li><a href="<?php echo TB_SHOP_URL.'/cart.php';?>" target='_self'>장바구니</a></li>
+			<li><a href="<?php echo TB_SHOP_URL.'/orderinquiry.php';?>" target='_self'>주문배송</a></li>
+			<li><a href="<?php echo TB_SHOP_URL.'/mypage.php';?>" target='_self'>마이페이지</a></li>
+			<li><a href="<?php echo TB_BBS_URL.'/faq.php?faqcate=1';?>" target='_self'>고객센터</a></li>
+		</ul>
+	</div>
+	<!--//유틸-->
+
+
+	<!-- 상단영역 : 시작 -->            
+	<table width="100%" height="100%" align="center" cellpadding="0" cellspacing="0" border="0">
+		<tr>
+			<td>
+			<div class="top">   
+				<h1 style="margin-top : 30px"><a href="https://dodamgolf.co.kr/" target='_self'><img src="<?php echo TB_DOMAIN;?>/theme/basic/dodam/logo.png" alt="" title="" /></a></h1>
+
+				<div class="top_search">
+					<form name="fsearch" id="fsearch" method="post" action="<?php echo TB_SHOP_URL; ?>/search.php" onsubmit="return fsearch_submit(this);" autocomplete="off">
+						<label for="header_search_input" class="hidden">검색어입력</label>
+						<input type="text" name="ss_tx" id="header_search_input" class="sch_stx" maxlength="20" value="" placeholder="상품명을 입력해주세요" />
+						<label for="header_search_button" class="hidden">검색</label>
+						<input type="image" src="http://dodamchon.co.kr/data/skin/renewal_2019/images/common/search_icon.png" value="검색"  id="header_search_button" style="float:right; margin-top:10px; margin-right:10px"/>
+					</form>
+				</div>
+				<div class="top_banner">
+					<div class="outline">
+						<a href="http://dodamchon.co.kr/goods/view?no=20651" target="_self"><img src="http://dodamchon.co.kr/data/skin/dodamchon_renewal_2019/images/alliance_banner.jpg" alt="" title=""></a>
+					</div>
+				</div>
+			</div>
+			</td> 
+		</tr>
+	</table>
+
+<!-- 고정 네비 구현시 여기 위치 -->
+<!--
+{?_SERVER.REMOTE_ADDR!='211.214.192.446'}-->
+	<!--<div class="menu_gnb menu_gnb2 jbMenu2">-->
+	<!--{=showCategoryNavigation()}-->
+	<!--</div>-->
+<!--{/}-->
+
+</div>
+
+
+<!-- 따라다니는 네비 구현시 여기 위치 -->
+<!--
+{?_SERVER.REMOTE_ADDR=='211.214.192.446'}
+	<div class="menu_gnb jbMenu2">
+		{=showCategoryNavigation()}
+	</div>
+{/}
+-->
+
+
+
+<!--고정영역-->
+<!--
+<div id="commentWrapper">
+    <div id="comment">
+		{ ? userInfo.group_seq == '2' ||  userInfo.group_seq == '6'}
+        <a href='' target='_self'><img src="../images/donga_mall_circle.png" title="동아복지몰가기" alt="동아복지몰가기" usemap="#Map" border="0"></a>
+        <map name="Map" id="Map">
+          <area shape="rect" coords="28,47,217,199" href="/goods/catalog?code=00060012" />
+          <area shape="rect" coords="83,204,166,240" id="close" href="#"/>
+        </map>
+		{/}
+  </div>
+</div>
+-->
+<!--고정영역-->
+
+
+

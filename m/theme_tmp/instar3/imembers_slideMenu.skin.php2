@@ -1,0 +1,18 @@
+<?php
+if(!defined("_TUBEWEB_")) exit; // 개별 페이지 접근 불가
+?>
+    <dd>
+	    <?php if($is_member) { ?>
+
+		<?php } else { ?>  
+		    <a href="<?php echo TB_MBBS_URL; ?>/login.php?url=<?php echo $urlencode; ?>" class="btn_medium">로그인</a>
+		<?php } ?>
+	</dd>
+	<dd>
+	    <?php if($is_member) {  //로그인 ?>
+
+		<?php } else {   //비로그인 ?>
+
+		<?php  } ?>
+	</dd>
+

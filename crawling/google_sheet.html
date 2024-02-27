@@ -1,0 +1,91 @@
+<html>
+    <body>
+        <form action="./google_sheet_save.php" method="post" id="frm">
+            <input type="hidden" name="goods_list" id="goods_list" />
+        </form>
+
+        <script src="https://cdn.jsdelivr.net/gh/tanaikech/GetAccessTokenFromServiceAccount_js@master/getaccesstokengromserviceaccount_js.min.js"></script>
+        <!-- <script async defer src="https://accounts.google.com/gsi/client" onload="gisLoaded()"></script> -->
+        <script
+            async
+            defer
+            src="https://apis.google.com/js/api.js"
+            onload="gapiLoaded()"
+        ></script>
+        <script>
+            let origin = "";
+            let table = "";
+            const object = {
+                private_key:
+                    "-----BEGIN PRIVATE KEY-----\nMIIEvAIBADANBgkqhkiG9w0BAQEFAASCBKYwggSiAgEAAoIBAQCEYD4WFJJZifz2\nuczyZ7v8B+HTrUP0nS51eG73ZuUgTF0X1dMWDZCR5ZU/Us2rTmb9erh/ttgg1F6f\n6UXJ4aLn2E652WILau+uaU8M+eJfsw+LCmiAVZSQ9+FHbeX6OO3yxzJT/+qu3xxK\nVo0NpH8rOGJTdENPysVecPX+spIBfvo3pNfBCf2g/J/fntSW1d6P21XW41pO8VMh\nMdJzCj9CwAR2ce6j+6ZB5kvrI3XwqrA6fr3V6OPt/7uE1YwA2jL6tF4lc0YfxZGS\nvRjRBr8qup6bdlV4n9+4rMeZIra+PLO4GBmJ7wCm75hcAuxu4B/wsDLT6ZFRwXVt\nBS4Nj6+BAgMBAAECggEAQAO8snfTSBqLKpMyUX0pspjrM66j4KyMNYF+hASNw/85\nu5eLIyx/H5a7BGraC7/33ReWFijJPqMEeWdY+OY1HdIETCqcF7JoYtsJP9itiKLy\nXsYzP/BiznIYzq6OGuGh7Bg5NdbZ2iQJrcdKIfFNEA0Nu5bLIFCJ/oA47ajUI4Ve\nlfDtQTWtuqm7KlDMZtP+i5MtFDIvUaf0JB4Gvoq45sqqylm76P+ee/dUWUdGNFtD\nzaEHBoRtKozCKn20biXOIlfJwaSsID8OPeXIxsbWcFu5cRqSdS5cgP8TbmysxOFt\nZkhcLf1k1YgIg8tIBdIryWMw4OdU4xKGuGcDutTC2wKBgQC5Em9hUXoy7sld8mtm\nfI0NNH8Pg+6I8jmSplqUVGxttmnim9Mm5sPgYOcznHos24uuw5YdMrhUMcmNf8gF\nhosI4PfW2pnzFn9KOEz5L0ozyhziITTem3qNTXEfRsq2SwfCD4vSBayzGlw3BnNG\nRTgq9PKD2yY9xZf/VhMMs/RkuwKBgQC3G8D+bv0cWqKVrdL9V5QJohL+R+E4rR29\n1oAP3+oKGHAtiLmevDldSP5I3npwgA+czlq27WMW7CYdnLDmXUa/1IUaY/RqHmJI\nr7vAv11CU2uICf4qRRHjxdS7qNNxQOjwez0N6pTn9ia6TnuU6oo/IaQuJzIMSZpi\nUfqt6wQW8wKBgHnoA8fl5IliMvAYO9iRWFQHbV6p99jrPTM1Mtsb1SRbkNm87NRm\nE0Zcbk7X1r5vi0399YacH0EOXoY/UmEZY8HgdkBnVBsEiao49bL6DHWav3XQi8PK\nRGqJRWdluSdkuuKAXQhlxoFfbrisHgh+leXt3UUveLwdyOZfK0Ml0mj7AoGAFm4T\n6hb2cm6309YDLn136OYtpXBwqlyqdAK+lTM8nBf6Rdmlw0gTTtYOMCbwoK9POkoc\n2qOhq8Epuh7jnJR4gi8qTt1Hp2gpafX87dODPQiy92sh81OaqWgmcwZvQERPRIYU\nKIw/yVphzBipEsjYPnuEfRLYEqFBhCG+r2dGjPkCgYAiVRVvIBqrX3yLG1xLV36L\nXWARF99EGv06W7cPNySVwRkiHYg8uOV3x71iW3wrfr56IPDBQqrfrc8+YfLty+LF\nh75FNlX9UX/RCPppNzIQSFObXxPu46p+Yc2RMJ7Fm7Q+TZRpWz+PWm8hsCPcFnq6\n5VX2DDByMhfAfk9rWsrSqw==\n-----END PRIVATE KEY-----\n",
+                client_email: "newbiz@newbz-378501.iam.gserviceaccount.com",
+                scopes: [
+                    "https://www.googleapis.com/auth/spreadsheets.readonly",
+                ],
+            };
+
+            const DISCOVERY_DOC =
+                "https://sheets.googleapis.com/$discovery/rest?version=v4";
+
+            function gapiLoaded() {
+                gapi.load("client", initializeGapiClient);
+            }
+
+            async function initializeGapiClient() {
+                gapi.auth.setToken(
+                    await GetAccessTokenFromServiceAccount.do(object)
+                );
+                await gapi.client.init({
+                    //apiKey: API_KEY,
+                    discoveryDocs: [DISCOVERY_DOC],
+                });
+                gapiInited = true;
+                getData();
+            }
+
+            async function getData() {
+                let response;
+                try {
+                    // Fetch first 10 files
+                    response = await gapi.client.sheets.spreadsheets.values.get(
+                        {
+                            spreadsheetId:
+                                "1oELGtR_jvEJHG6OtM_Oe6-risr1lm0QwP7eHwKyQujY",
+                            range: "comp!A:C",
+                        }
+                    );
+                } catch (err) {
+                    console.log(err.message);
+                    return;
+                }
+                const range = response.result;
+                if (!range || !range.values || range.values.length == 0) {
+                    document.getElementById("content").innerText =
+                        "No values found.";
+                    return;
+                }
+                /*
+                const origin = range.values.map((cell) => {
+                    const data = [cell[0], cell[1], cell[2]];
+                    return data;
+                });
+                */
+                const result = range.values.filter((arr) => arr[0].length > 5);
+                document.getElementById("goods_list").value =
+                    JSON.stringify(result);
+                //document.getElementById("frm").submit();
+
+                var form = document.getElementById("frm");
+                var xhr = new XMLHttpRequest();
+                xhr.open("POST", "./google_sheet_save.php", true);
+                xhr.onreadystatechange = function () {
+                    if (xhr.readyState === 4 && xhr.status === 200) {
+                        // 응답 처리
+                        console.log(xhr);
+                    }
+                };
+                xhr.send(new FormData(form));
+            }
+        </script>
+    </body>
+</html>

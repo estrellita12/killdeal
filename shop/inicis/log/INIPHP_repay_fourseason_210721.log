@@ -1,0 +1,224 @@
+INFO	[2021-07-21 13:07:35:999] <20966> START INIPHP repay (V5036-141209)(OS:Linux2.6.32-754.11.1.el6.x86_64,PHP:5.3.3)
+DEBUG	[2021-07-21 13:07:35:999] <20966> inipayhome:/home1/killdeal/public_html/shop/inicis
+DEBUG	[2021-07-21 13:07:35:999] <20966> debug:false
+DEBUG	[2021-07-21 13:07:35:999] <20966> type:repay
+DEBUG	[2021-07-21 13:07:35:999] <20966> pgid:INIphpRPAY
+DEBUG	[2021-07-21 13:07:35:999] <20966> subpgip:203.238.3.10
+DEBUG	[2021-07-21 13:07:35:999] <20966> mid:fourseason
+DEBUG	[2021-07-21 13:07:35:999] <20966> admin:1111
+DEBUG	[2021-07-21 13:07:35:999] <20966> oldtid:INIMX_CARDfourseason20210715224314605156
+DEBUG	[2021-07-21 13:07:35:999] <20966> currency:WON
+DEBUG	[2021-07-21 13:07:35:999] <20966> price:29900
+DEBUG	[2021-07-21 13:07:35:999] <20966> confirm_price:224100
+DEBUG	[2021-07-21 13:07:35:999] <20966> buyeremail:nellnhy@naver.com
+DEBUG	[2021-07-21 13:07:35:999] <20966> tax:2718
+DEBUG	[2021-07-21 13:07:35:999] <20966> taxfree:0
+INFO	[2021-07-21 13:07:35:999] <20966> Check Field OK
+INFO	[2021-07-21 13:07:35:999] <20966> Make TID OK INIphpRPAYfourseason20210721130735994489
+INFO	[2021-07-21 13:07:35:999] <20966> PI PUB KEY LOAD OK []
+INFO	[2021-07-21 13:07:35:999] <20966> PG PUB KEY LOAD OK [30]
+INFO	[2021-07-21 13:07:35:999] <20966> MERCHANT PRIV KEY LOAD OK
+INFO	[2021-07-21 13:07:35:999] <20966> MERCHANT PUB KEY LOAD OK [0]
+DEBUG	[2021-07-21 13:07:36:0] <20966> MAKE ENCRYPT OK[<?xml version="1.0" encoding="UTF-8"?>
+<PartCancelInfo>
+	  <PRTC_TID>INIMX_CARDfourseason20210715224314605156</PRTC_TID>
+	  <PRTC_Price>29900</PRTC_Price>
+	  <PRTC_Remains>224100</PRTC_Remains>
+	  <PRTC_Quota/>
+	  <PRTC_Interest/>
+	  <PRTC_NoAcctFNBC/>
+	  <PRTC_NmAcctFNBC/></PartCancelInfo>]
+INFO	[2021-07-21 13:07:36:0] <20966> MAKE BODY OK
+INFO	[2021-07-21 13:07:36:1] <20966> SIGN OK
+INFO	[2021-07-21 13:07:36:1] <20966> MAKE HEAD OK
+INFO	[2021-07-21 13:07:36:1] <20966> MSG_TO_PG:[0111700175D SHA1                   0                                      300620fourseason               29900INIphpRPAYfourseason20210721130735994489<?xml version="1.0" encoding="UTF-8"?>
+<INIpay>
+	  <PartCancelInfo>
+	    <SessionKey>2G2FFHCvT8dLcuupvhzwpF1ev+bq4uiKgYO3fp0oKxXtD/2dXyYTeJI8xX7j7KXs
+H2M3F3pVz11p+yUYJcQ7HabiX2yW/D/5zaCPldogro3niFocLvOgjg0yKnfm6/F8
+ah/17SsjKakgUEZtwSsDU4uHhVgWBUMZ8eRgSnKq8j+Y2mMIObHzWQ==
+</SessionKey>
+	    <Encrypted>HjppanLKZNrx+qY/XyBtSKMTk40jWJBAJN7nOmRXCvUn85HfFox96j2UT32aAIQt
+3NYSRh/SKHiJwijjJt2OEdR1E9XtoCaMaWZ+HcgMMAqCXsufmMZgxTKk6boslGBZ
+hsaAHXyGSOhv0c8eLDPrsfCreuokEcODktGdtXuc22TOuJ7q2r1DYmebviLIjDY9
+Z8u1huJ3+xymjXgz7HsN7w+FjnpIjTnNMU8P7fvkDIlLxw+icwRln/QQqOXUX603
+A5VY/1aGH3pFvkO9CK+dOKYTKCWLBLRd7EQhk23aDQJk3rfaCY4R2Te6uVK2mmgU
++rgcVTsoLBsF38gId4ADHy48+1SBaSjkTsVt0SQqhCTBxdIpTeQZy/IGdq5rRUUO
+BX+GpFph4f4=
+</Encrypted></PartCancelInfo>
+	  <GoodsInfo>
+	    <Tax>2718</Tax>
+	    <TaxFree/>
+	    <Currency>WON</Currency></GoodsInfo>
+	  <ReservedInfo>
+	    <MReserved1/>
+	    <MReserved2/>
+	    <MReserved3/></ReservedInfo>
+	  <ManageInfo>
+	    <Language/>
+	    <URL/>
+	    <TXVersion>5036B141209repayLinux     PHPchkfake   2.6.32-754.11.1.el6.x86_64PHP:</TXVersion>
+	    <TXUserID/>
+	    <TXRegNum/></ManageInfo></INIpay>ACbOihrd+duDozCUmChTs+fLx2NMSpp0UvRH3CyEaBJcf9iDJNZk724F5AqBXPG+
+ipUIVgk4dli2b3flLnKDXLjP5WnXGTobAEBeGFGyoODZ8lMEobjVSnYB/rEIqPz7
+nvNHlVXBCmckpOAxpS5nlCbXuEhcQDGx0bqFGCYiS2XC
+]
+INFO	[2021-07-21 13:07:36:1] <20966> DNS LOOKUP OK(203.238.37.3:203.238.37.3:34049) laptime:0
+INFO	[2021-07-21 13:07:36:3] <20966> SOCKET CONNECT OK
+INFO	[2021-07-21 13:07:36:3] <20966> SEND OK
+INFO	[2021-07-21 13:07:36:303] <20966> RECV OK
+INFO	[2021-07-21 13:07:36:303] <20966> MSG_FROM_PG:[0099200175D SHA1                   0                                      300630fourseason               29900INIphpRPAYfourseason20210721130735994489<?xml version="1.0" encoding="UTF-8"?><INIpay>
+<PartCancelInfo>
+<PayMethod>Card</PayMethod>
+<ResultCode>120000</ResultCode>
+<ResultMsg urlencode="1">%C1%A4%BB%F3%C3%B3%B8%AE%B5%C7%BE%FA%BD%C0%B4%CF%B4%D9.</ResultMsg>
+<SessionKey>AJtvBNRtGwg0R2YgdSRzRZLsa+ntyfWICsfEL1IyhnNGN5yhb3rHraZlRiXaf/Vj
+tAu3XTD6Kgp9IxHqZnJsECG/32Dl7Tpu04ZDv07+OnSZxbzs+eC4bdShTsKiRmMi
+rcfnfHYLeCRXVMHPxAtKgKhwXBtbO7kc22nFOSneQV3klcqaEJiRiKI=
+</SessionKey>
+<Encrypted>+wzOR1PwAnx4/PrdkN6fZKzBufn6YDyNb6wl2+jG0gTRLYXkm3+2/4O43cKroQ7y
+9AtT5dP7+AEFWO6uvWltdtQjR2PeDSPcoIbn2c9NfMfc8+WPNiZgTlBQvAejqH49
+VecRGzi5icy3Hbt8wNtAFIW/VpexGdapLRwSrAAjZ7d7Gc0KsBqt8JmW0db+eCfc
+bIrKegIGsiDQXCr6JBBqgEytVGolPQPJmswOsRVEAVtR0EiVMfIKkT0ZmY9ga2b9
+BcTJ9QdNcXseqPvs9zvHQh371CkUkD23AKUcrSViu7TaZpx4UPQgO+fNQX4ahBgo
+YFPgJH47Lqe7UNGTM5UfZmn47VjRu4RfE4xxaLk8C20mFvhOfeq/UD90i2sI8VVm
+2T3zNhJNIpyKcvecXuznt3UXKhFL/NuiL+DUFZHw4n+v3d7Qodmsm7S+hnBHuG0G
+aUcyj2ZjiZMCcKD9pWESnw==
+</Encrypted>
+</PartCancelInfo>
+<ManageInfo/>
+<ReservedInfo/>
+</INIpay>
+e3SXmy/iy1qJASFwKZSPckB8/VGBntzj8aONr/XUzPmXPp+8i340VWyrXSeC1hhc
+Qs5xP0xUKgUuSKex4qkmIhrHFeTNHP7Nfp3p0YEBBg3FQMwvyX8SjI0ciMqoKmoI
+f04vHIsP0eM0EZ8NOtSIjfHyUzd4k4kTyztlrVORKNU=
+]
+INFO	[2021-07-21 13:07:36:303] <20966> VERIFY OK
+INFO	[2021-07-21 13:07:36:303] <20966> PARSE HEAD OK
+INFO	[2021-07-21 13:07:36:303] <20966> PARSE BODY OK
+INFO	[2021-07-21 13:07:36:304] <20966> DECRYPT OK
+DEBUG	[2021-07-21 13:07:36:304] <20966> DECRYPT MSG:[<?xml version="1.0" encoding="UTF-8"?><PartCancelInfo>
+<PRTC_TID>INIMX_CARDfourseason20210715224314605156</PRTC_TID>
+<PRTC_Price>29900</PRTC_Price>
+<PRTC_Remains>224100</PRTC_Remains>
+<PRTC_Quota>05</PRTC_Quota>
+<PRTC_Type>1</PRTC_Type>
+<CancelDate>20210721</CancelDate>
+<CancelTime>130736</CancelTime>
+<PRTC_Cnt>1</PRTC_Cnt>
+</PartCancelInfo>]
+INFO	[2021-07-21 13:07:36:304] <20966> DECRYPT PARSE OK
+INFO	[2021-07-21 13:07:36:304] <20966> END repay 정상처리되었습니다. Laptime:[0.306sec]
+INFO	[2021-07-21 13:07:36:304] <20966> ===============================================================
+INFO	[2021-07-21 15:26:50:573] <13319> START INIPHP repay (V5036-141209)(OS:Linux2.6.32-754.11.1.el6.x86_64,PHP:5.3.3)
+DEBUG	[2021-07-21 15:26:50:573] <13319> inipayhome:/home1/killdeal/public_html/shop/inicis
+DEBUG	[2021-07-21 15:26:50:573] <13319> debug:false
+DEBUG	[2021-07-21 15:26:50:573] <13319> type:repay
+DEBUG	[2021-07-21 15:26:50:573] <13319> pgid:INIphpRPAY
+DEBUG	[2021-07-21 15:26:50:573] <13319> subpgip:203.238.3.10
+DEBUG	[2021-07-21 15:26:50:573] <13319> mid:fourseason
+DEBUG	[2021-07-21 15:26:50:573] <13319> admin:1111
+DEBUG	[2021-07-21 15:26:50:573] <13319> oldtid:StdpayCARDfourseason20210706141058567668
+DEBUG	[2021-07-21 15:26:50:573] <13319> currency:WON
+DEBUG	[2021-07-21 15:26:50:573] <13319> price:20000
+DEBUG	[2021-07-21 15:26:50:573] <13319> confirm_price:130400
+DEBUG	[2021-07-21 15:26:50:573] <13319> buyeremail:thcho76@naver.com
+DEBUG	[2021-07-21 15:26:50:573] <13319> tax:1818
+DEBUG	[2021-07-21 15:26:50:573] <13319> taxfree:0
+INFO	[2021-07-21 15:26:50:573] <13319> Check Field OK
+INFO	[2021-07-21 15:26:50:573] <13319> Make TID OK INIphpRPAYfourseason20210721152650731901
+INFO	[2021-07-21 15:26:50:573] <13319> PI PUB KEY LOAD OK []
+INFO	[2021-07-21 15:26:50:573] <13319> PG PUB KEY LOAD OK [30]
+INFO	[2021-07-21 15:26:50:573] <13319> MERCHANT PRIV KEY LOAD OK
+INFO	[2021-07-21 15:26:50:573] <13319> MERCHANT PUB KEY LOAD OK [0]
+DEBUG	[2021-07-21 15:26:50:574] <13319> MAKE ENCRYPT OK[<?xml version="1.0" encoding="UTF-8"?>
+<PartCancelInfo>
+	  <PRTC_TID>StdpayCARDfourseason20210706141058567668</PRTC_TID>
+	  <PRTC_Price>20000</PRTC_Price>
+	  <PRTC_Remains>130400</PRTC_Remains>
+	  <PRTC_Quota/>
+	  <PRTC_Interest/>
+	  <PRTC_NoAcctFNBC/>
+	  <PRTC_NmAcctFNBC/></PartCancelInfo>]
+INFO	[2021-07-21 15:26:50:574] <13319> MAKE BODY OK
+INFO	[2021-07-21 15:26:50:575] <13319> SIGN OK
+INFO	[2021-07-21 15:26:50:575] <13319> MAKE HEAD OK
+INFO	[2021-07-21 15:26:50:575] <13319> MSG_TO_PG:[0111700175D SHA1                   0                                      300620fourseason               20000INIphpRPAYfourseason20210721152650731901<?xml version="1.0" encoding="UTF-8"?>
+<INIpay>
+	  <PartCancelInfo>
+	    <SessionKey>wfu1aGvPEaz5oWNYqs6wgDFLf/KwXK0ihCyn/n5EmwauZXv423vf0kphbEuupVuA
+XrERMb1gW5UREM0K2nH4ArqesKfU1Fv8g5ckOGuCmGvEpEKvDZ3mkyEEHoDZn1DN
+ITOmjy+w2dJ6HT7P1nTylBnvAUzMArpWKcCegnZF/FhYqPMN4rCETQ==
+</SessionKey>
+	    <Encrypted>ULYsohu5ExzV0iGB/yJ1m5+od+cf06vJhYJVJEbK+lrxnzIxwFv3uRDlH2d99EHe
+qjM/jp0qftoXHHtrR90x2kpji86fSRBU+EiKWN+RSNTETOHo6htazwwB7SEGQ8KL
+9M1g5t5GK4ZOEna1tL4LGERqchw76zZLv59OGoDgvHO1HrQmEPj/ADxgtKsIMaFD
+4/zMX0uccFCt6QtT87neO7BdyUzpYJ3ZETx0M95Nl5USjxco1WdJtUNnHM6Pd61z
+GbwjxybERljmTtXVFJJe4AnSFrTOcRvX/vNr3RODDCB3a1bFAzjX9HlUR7FJLFbn
+za9NHVguuDOalp37HFT13G59T2qQm7HYNWlh139WMmzQTTtESOZIIAjITHSK/gSo
+jJ5C06OlAG0=
+</Encrypted></PartCancelInfo>
+	  <GoodsInfo>
+	    <Tax>1818</Tax>
+	    <TaxFree/>
+	    <Currency>WON</Currency></GoodsInfo>
+	  <ReservedInfo>
+	    <MReserved1/>
+	    <MReserved2/>
+	    <MReserved3/></ReservedInfo>
+	  <ManageInfo>
+	    <Language/>
+	    <URL/>
+	    <TXVersion>5036B141209repayLinux     PHPchkfake   2.6.32-754.11.1.el6.x86_64PHP:</TXVersion>
+	    <TXUserID/>
+	    <TXRegNum/></ManageInfo></INIpay>AP8iLnt29CorLfHQrFI1kWIXL5C91zfPxg/IXqQ73UDAP+QAbulmNCIX4AbSWE6y
+D8i+9I3GKvotyKF7hkr+N7v9SBhINtX0BUW5WaV4tUikVTXJsMw9/GpdJPHOylCo
+hu0Imr9GwNCXzRqY+7am9dlEzrB/i+UKSeskpNqD1bRe
+]
+INFO	[2021-07-21 15:26:50:575] <13319> DNS LOOKUP OK(203.238.37.3:203.238.37.3:34049) laptime:0
+INFO	[2021-07-21 15:26:50:577] <13319> SOCKET CONNECT OK
+INFO	[2021-07-21 15:26:50:577] <13319> SEND OK
+INFO	[2021-07-21 15:26:50:899] <13319> RECV OK
+INFO	[2021-07-21 15:26:50:899] <13319> MSG_FROM_PG:[0099200175D SHA1                   0                                      300630fourseason               20000INIphpRPAYfourseason20210721152650731901<?xml version="1.0" encoding="UTF-8"?><INIpay>
+<PartCancelInfo>
+<PayMethod>Card</PayMethod>
+<ResultCode>120000</ResultCode>
+<ResultMsg urlencode="1">%C1%A4%BB%F3%C3%B3%B8%AE%B5%C7%BE%FA%BD%C0%B4%CF%B4%D9.</ResultMsg>
+<SessionKey>ADRtV8EwX8PtpOoH6w3OWTs4/XQsUAYlI7WaUa3GM70T9Oyka5mmV2GXucjRamzJ
+UnKpPxthGh6juwizx/Wqp7lmmL2e63YO7IS0RlIDb781pnHf4gUtg2bJnCROGHWF
+qw+/48yQ9Daqtzv3mHkummYY3qZ98e5MZBQhFGTpE61n8+/oJRPGETQ=
+</SessionKey>
+<Encrypted>SmKcL3SBrCDk45DcuwFZgYuF8+0g0KLDlyKo7nEPKTfY/ae2pDYpHtOEgGelvMVm
+nygtuvbGnl4IspRs6p+OUQ6QnGBUc/Co0pIB3yXcYeacJYZEqg63Hn/1KYQVMPHj
+DSr6xU317e/qaBVNH5XnnIg7BwqsaXNTFchlvguCULhBTocbSDSqs2pIvKRqZI4n
+RU1Zu2Yc7eGNcwWw85oDAg3nTQwvikj2uL7ZNDoeIyVfYXI4k7pc4ZTn50UH8bG0
+titMX0RfiJziEGDI8H66+CwwZjp3ln1futTiM/+r5GF1bEgWo+H6LeJUGbJMN6pS
+PZsJZRWTnzpZV5dzegUtTsVhzzkajnN0Gm64m8IYzOvnU4M3/RL14E/lmZdZevZ+
+Lkqxx+KvpDy1JeSZOGmHb1kT5DmABcuYMGvEPSZ1QDADa5/ynCJ/cQS2uR3Q/hM6
+W5ZvvELYNt0ygFEa4KdYUg==
+</Encrypted>
+</PartCancelInfo>
+<ManageInfo/>
+<ReservedInfo/>
+</INIpay>
+TO332x7HtByrdoe6H11rk/D6TUq6ue1/txN6b6WjxcDo9qfAihQb3qIC4ihFxDmL
+SwICcyNAGegMSL23OoWLuY7pbJEJ81NWfBncsaNac1Rxy3wEGU6ll0Yhds5NV61A
+5imV5kiSw4X50jmUf8r3SRVhE+5H/H7GiDtbJnM0Dxw=
+]
+INFO	[2021-07-21 15:26:50:899] <13319> VERIFY OK
+INFO	[2021-07-21 15:26:50:899] <13319> PARSE HEAD OK
+INFO	[2021-07-21 15:26:50:899] <13319> PARSE BODY OK
+INFO	[2021-07-21 15:26:50:900] <13319> DECRYPT OK
+DEBUG	[2021-07-21 15:26:50:900] <13319> DECRYPT MSG:[<?xml version="1.0" encoding="UTF-8"?><PartCancelInfo>
+<PRTC_TID>StdpayCARDfourseason20210706141058567668</PRTC_TID>
+<PRTC_Price>20000</PRTC_Price>
+<PRTC_Remains>130400</PRTC_Remains>
+<PRTC_Quota>00</PRTC_Quota>
+<PRTC_Type>1</PRTC_Type>
+<CancelDate>20210721</CancelDate>
+<CancelTime>152651</CancelTime>
+<PRTC_Cnt>1</PRTC_Cnt>
+</PartCancelInfo>]
+INFO	[2021-07-21 15:26:50:900] <13319> DECRYPT PARSE OK
+INFO	[2021-07-21 15:26:50:900] <13319> END repay 정상처리되었습니다. Laptime:[0.327sec]
+INFO	[2021-07-21 15:26:50:900] <13319> ===============================================================

@@ -1,0 +1,112 @@
+INFO	[2023-08-07 10:58:58:221] <32018> START INIPHP repay (V5036-141209)(OS:Linux2.6.32-754.11.1.el6.x86_64,PHP:5.3.3)
+DEBUG	[2023-08-07 10:58:58:221] <32018> inipayhome:/home1/killdeal/public_html/shop/inicis
+DEBUG	[2023-08-07 10:58:58:221] <32018> debug:false
+DEBUG	[2023-08-07 10:58:58:221] <32018> type:repay
+DEBUG	[2023-08-07 10:58:58:221] <32018> pgid:INIphpRPAY
+DEBUG	[2023-08-07 10:58:58:221] <32018> subpgip:203.238.3.10
+DEBUG	[2023-08-07 10:58:58:221] <32018> mid:majorgol03
+DEBUG	[2023-08-07 10:58:58:221] <32018> admin:1111
+DEBUG	[2023-08-07 10:58:58:221] <32018> oldtid:INIMX_CARDmajorgol0320230724183440585489
+DEBUG	[2023-08-07 10:58:58:221] <32018> currency:WON
+DEBUG	[2023-08-07 10:58:58:221] <32018> price:49000
+DEBUG	[2023-08-07 10:58:58:221] <32018> confirm_price:45000
+DEBUG	[2023-08-07 10:58:58:221] <32018> buyeremail:lbs6845@naver.com
+DEBUG	[2023-08-07 10:58:58:221] <32018> tax:4455
+DEBUG	[2023-08-07 10:58:58:221] <32018> taxfree:0
+INFO	[2023-08-07 10:58:58:222] <32018> Check Field OK
+INFO	[2023-08-07 10:58:58:222] <32018> Make TID OK INIphpRPAYmajorgol0320230807105858223574
+INFO	[2023-08-07 10:58:58:222] <32018> PI PUB KEY LOAD OK []
+INFO	[2023-08-07 10:58:58:227] <32018> PG PUB KEY LOAD OK [30]
+INFO	[2023-08-07 10:58:58:228] <32018> MERCHANT PRIV KEY LOAD OK
+INFO	[2023-08-07 10:58:58:228] <32018> MERCHANT PUB KEY LOAD OK [0]
+DEBUG	[2023-08-07 10:58:58:228] <32018> MAKE ENCRYPT OK[<?xml version="1.0" encoding="UTF-8"?>
+<PartCancelInfo>
+	  <PRTC_TID>INIMX_CARDmajorgol0320230724183440585489</PRTC_TID>
+	  <PRTC_Price>49000</PRTC_Price>
+	  <PRTC_Remains>45000</PRTC_Remains>
+	  <PRTC_Quota/>
+	  <PRTC_Interest/>
+	  <PRTC_NoAcctFNBC/>
+	  <PRTC_NmAcctFNBC/></PartCancelInfo>]
+INFO	[2023-08-07 10:58:58:229] <32018> MAKE BODY OK
+INFO	[2023-08-07 10:58:58:229] <32018> SIGN OK
+INFO	[2023-08-07 10:58:58:229] <32018> MAKE HEAD OK
+INFO	[2023-08-07 10:58:58:229] <32018> MSG_TO_PG:[0111700175D SHA1                   0                                      300620majorgol03               49000INIphpRPAYmajorgol0320230807105858223574<?xml version="1.0" encoding="UTF-8"?>
+<INIpay>
+	  <PartCancelInfo>
+	    <SessionKey>dcBsN14SuO/LD5CdXyupS7+N2DGf71LdMfQzCdec6g48PkEJ61d3PH41erdrzOXN
++BAbAM0S9szRKuP6RqpgFWRtSlwPrBqb23DYCGpMYqJipu1xkxdZSea01j99rnz2
+4oPpWkNURS3P864rZeKd/3JXHdhlyfFgh0Xjyu2nfDCBDlyL2WGjpw==
+</SessionKey>
+	    <Encrypted>OXDSW6hfWtVTpVd70lR2llAjil4M96HL978T9+h4tk4684qAtAYWy6CQRfbusgq6
+tIySGm7xzbE7QffeYhUzXxIuALdElKGTsgUx3d03ugEV3khCvzYwQC4nUGpYT5+d
+wHcWV2k8BkzrHJc+5suU9gpnR2Abdy9h7Tk1UovY9SGfWIZdqb7a0WsxMx2N6NFI
+P0La9XwAoHgJUucJKPDfwLNBs3xwb79P3teu9G0uHbvyxtW2cPoXgjJzV/V5hZFP
+I78kjY958nLvPRezXM0YuDvwEOgDts7WN7yEFvp3uQRH/jHO9yGXlgfCf/VlJMHD
+V+0XhDJaDX1pk4HtLx3tsnYRoh11aD+SrboYLW0HkKioyzq+E1nPUT/1RwDB+o9o
+ftsBtsefUFw=
+</Encrypted></PartCancelInfo>
+	  <GoodsInfo>
+	    <Tax>4455</Tax>
+	    <TaxFree/>
+	    <Currency>WON</Currency></GoodsInfo>
+	  <ReservedInfo>
+	    <MReserved1/>
+	    <MReserved2/>
+	    <MReserved3/></ReservedInfo>
+	  <ManageInfo>
+	    <Language/>
+	    <URL/>
+	    <TXVersion>5036B141209repayLinux     PHPchkfake   2.6.32-754.11.1.el6.x86_64PHP:</TXVersion>
+	    <TXUserID/>
+	    <TXRegNum/></ManageInfo></INIpay>AL/SyOF4g62e41FBaLzHsZxGOdJl5EV9RdvAKobQhzaixJVRBzmmtHhOsMgjt2+E
+QtgYqmUBSqg4029Kv+41zJY0F+kF9MR/qQ5WfL2YNjJfbgT7Il5P31Bj3dl4yCsR
+DWmV1N0UPcRkJJbOWw5KHZlXguc3KpMp9VuR58Gz1xlu
+]
+INFO	[2023-08-07 10:58:58:229] <32018> DNS LOOKUP OK(203.238.37.3:203.238.37.3:34049) laptime:0
+INFO	[2023-08-07 10:58:58:231] <32018> SOCKET CONNECT OK
+INFO	[2023-08-07 10:58:58:231] <32018> SEND OK
+INFO	[2023-08-07 10:58:58:389] <32018> RECV OK
+INFO	[2023-08-07 10:58:58:389] <32018> MSG_FROM_PG:[0098000175D SHA1                   0                                      300630majorgol03               49000INIphpRPAYmajorgol0320230807105858223574<?xml version="1.0" encoding="UTF-8"?><INIpay>
+<PartCancelInfo>
+<PayMethod>Card</PayMethod>
+<ResultCode>120000</ResultCode>
+<ResultMsg urlencode="1">%C1%A4%BB%F3%C3%B3%B8%AE%B5%C7%BE%FA%BD%C0%B4%CF%B4%D9.</ResultMsg>
+<SessionKey>AORcxxRyUSbEv8GxFGQvUnUuWS5hnkG/uW8JGS90c2FztObvtFjjPVm0AJyZ/iwP
+e9hYg3u/401RIdqDAAlXMULEqyxpYrh+Qsl96UgWv+oCEekYajR84JgNEOs0XTVs
+Pk01zPtP9G0YRHHOEst4+m8IHlYmeFP8DbsGM3ErpqDWjwiZFSxj8cg=
+</SessionKey>
+<Encrypted>rEG7DK1H3an4QSjltkAx++S1nwMjoz8XWmryqEfzkmKPRwa6+rndNw1ZEUkNBmXe
+minrsEKfFLR6/sS2zfcpa9ZI5KGtASTvji3m72QjdNZQO6Xvksbo8FTWLtYUfy2A
+Oo5iZjZleIwLE8uNqPrP0zLqbEnDVnRiP/1VaPuTj3d87lUEgp8Ml2B3T744T+Z3
+BY1513cON81Quvjw51aFG6CcrVIPi/iDWHTpfGi8YBYOGYBIQAtUV24OAwD8cuOI
+zfMM1rwwv+pc4KWjOVWjiq/P0pnUyIYCYE1eIlC5Q/QOASgVhetMQmad0txN28wR
+k1XWHb8ufko/P3eEVylWcCxZUcrpx0ye17qY0L/Ek2dvqmGF6pdZjEAY+SmnCYoe
+epy2rcW01MOpHla9GrWr4uH7Neiy5Bovuvq2hift06fa7JKxKHbcNpeV3ge7c65Z
+gE4rDzWyuaY=
+</Encrypted>
+</PartCancelInfo>
+<ManageInfo/>
+<ReservedInfo/>
+</INIpay>
+Xk4tBg0ITdPcaW5KrjpnVCSyWxyndma/NAMNRoUd+ElTOVgkOrCERRE77F25zamY
+2p7FNeFZs2mEii3RnAvmQWulPDnCyMEmtxKb8jnAIzxNKE/mZSem6udrlWtZLFoh
+KV4K8ck8qLyODZXRyF6vIUSDe6/FlbUgM2ZVqRBJ1tg=
+]
+INFO	[2023-08-07 10:58:58:389] <32018> VERIFY OK
+INFO	[2023-08-07 10:58:58:389] <32018> PARSE HEAD OK
+INFO	[2023-08-07 10:58:58:389] <32018> PARSE BODY OK
+INFO	[2023-08-07 10:58:58:390] <32018> DECRYPT OK
+DEBUG	[2023-08-07 10:58:58:390] <32018> DECRYPT MSG:[<?xml version="1.0" encoding="UTF-8"?><PartCancelInfo>
+<PRTC_TID>INIMX_CARDmajorgol0320230724183440585489</PRTC_TID>
+<PRTC_Price>49000</PRTC_Price>
+<PRTC_Remains>45000</PRTC_Remains>
+<PRTC_Quota>00</PRTC_Quota>
+<PRTC_Type>1</PRTC_Type>
+<CancelDate>20230807</CancelDate>
+<CancelTime>105858</CancelTime>
+<PRTC_Cnt>1</PRTC_Cnt>
+</PartCancelInfo>]
+INFO	[2023-08-07 10:58:58:390] <32018> DECRYPT PARSE OK
+INFO	[2023-08-07 10:58:58:390] <32018> END repay 정상처리되었습니다. Laptime:[0.169sec]
+INFO	[2023-08-07 10:58:58:390] <32018> ===============================================================

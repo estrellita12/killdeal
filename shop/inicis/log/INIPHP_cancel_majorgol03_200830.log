@@ -1,0 +1,110 @@
+INFO	[2020-08-30 11:13:20:702] <16784> START INIPHP cancel (V5036-141209)(OS:Linux2.6.32-754.11.1.el6.x86_64,PHP:5.3.3)
+DEBUG	[2020-08-30 11:13:20:702] <16784> inipayhome:/home/killdeal/public_html/shop/inicis
+DEBUG	[2020-08-30 11:13:20:702] <16784> debug:false
+DEBUG	[2020-08-30 11:13:20:702] <16784> type:cancel
+DEBUG	[2020-08-30 11:13:20:702] <16784> mid:majorgol03
+DEBUG	[2020-08-30 11:13:20:702] <16784> admin:1111
+DEBUG	[2020-08-30 11:13:20:702] <16784> tid:INIMX_VBNKmajorgol0320200830110829815868
+DEBUG	[2020-08-30 11:13:20:702] <16784> cancelmsg:주문자 본인 취소-구매의사 없음
+INFO	[2020-08-30 11:13:20:702] <16784> Check Field OK
+INFO	[2020-08-30 11:13:20:702] <16784> PI PUB KEY LOAD OK []
+INFO	[2020-08-30 11:13:20:705] <16784> PG PUB KEY LOAD OK [30]
+INFO	[2020-08-30 11:13:20:706] <16784> MERCHANT PRIV KEY LOAD OK
+INFO	[2020-08-30 11:13:20:707] <16784> MERCHANT PUB KEY LOAD OK [0]
+DEBUG	[2020-08-30 11:13:20:707] <16784> MAKE ENCRYPT OK[<?xml version="1.0" encoding="UTF-8"?>
+<CancelInfo>
+	  <CancelTID>INIMX_VBNKmajorgol0320200830110829815868</CancelTID>
+	  <CancelMsg urlencode="1">%C1%D6%B9%AE%C0%DA+%BA%BB%C0%CE+%C3%EB%BC%D2-%B1%B8%B8%C5%C0%C7%BB%E7+%BE%F8%C0%BD</CancelMsg>
+	  <CancelReason/></CancelInfo>]
+INFO	[2020-08-30 11:13:20:707] <16784> MAKE BODY OK
+INFO	[2020-08-30 11:13:20:708] <16784> SIGN OK
+INFO	[2020-08-30 11:13:20:708] <16784> MAKE HEAD OK
+INFO	[2020-08-30 11:13:20:708] <16784> MSG_TO_PG:[0099400175D SHA1                   0                                      300420majorgol03                    INIMX_VBNKmajorgol0320200830110829815868<?xml version="1.0" encoding="UTF-8"?>
+<INIpay>
+	  <CancelInfo>
+	    <SessionKey>Cb/At+f/+BsARyGKLc80FHnf/BEcwgO+F90F1KsrWKziinYO+Msvb1lH86IoaHPe
+VU7qVCiVDo35h50DL/kQbFqFVVpMRrGvAHqs7QT4/6ow1WUqpRWZthpIGmpoNuKN
+PZKF5O9db+kP/pCioodslXCqy0YYVXe4Q/cVm87MsJlSZjUQjV7leg==
+</SessionKey>
+	    <Encrypted>hSXDj1YqcOT+T+Ag2IZ1opUeuyBZyDCPQcZjEC5Xt4AX3C3i+15P7CPtIBDFcIdA
+fxe1bXSLiU3GVItAvvSkTWU0BB3HSkMUZ+OyUYn1GMnWQ2nl3nLj1XGDCQPP/DtE
+p20DXUEygdhhS6zt2aELLVqanyEKtUBhnwP6nqoJDGU9dmNIPDO04v4i4JHeJv9H
+BfZU+G9gTIgHu1zT3F6esHHaFlE5L1J1FxbCWGUNcXwILF/1ROMMeRMrIn2iKdJs
+Z+rwMwN8ODdJmgQv/LgGA3vhey99arzXwwppsPsULgcucSQ0OGA8mOPO5SdVesBR
+X91N3zIthjpgVNAIfiLc/0h0jdv008pMHiOyp8KURQkho81AW7D5ow==
+</Encrypted></CancelInfo>
+	  <ReservedInfo>
+	    <MReserved1/>
+	    <MReserved2/>
+	    <MReserved3/></ReservedInfo>
+	  <ManageInfo>
+	    <Language/>
+	    <URL/>
+	    <TXVersion>5036B141209canceLinux     PHPchkfake   2.6.32-754.11.1.el6.x86_64PHP:</TXVersion>
+	    <TXUserID/>
+	    <TXRegNum/></ManageInfo></INIpay>AP4rehd60VrC4RwF4ZXQrUHjScrhIVaSi7mcZPCXMI2BFdiNEE+L72L0DFMViO9b
+xFB51IdwbUuauFj/ryZkrwGS7Z0tD64crF5mGKD7vKQlcIIZ4RJ2Jd/s/ML342e9
+wE8wNndzfp2XGVyM4Teu6JPC+h6ls0lfAS7OonLCCHtm
+]
+INFO	[2020-08-30 11:13:20:708] <16784> DNS LOOKUP OK(203.238.37.3:203.238.37.3:34049) laptime:0
+INFO	[2020-08-30 11:13:20:710] <16784> SOCKET CONNECT OK
+INFO	[2020-08-30 11:13:20:710] <16784> SEND OK
+INFO	[2020-08-30 11:13:20:886] <16784> RECV OK
+INFO	[2020-08-30 11:13:20:886] <16784> MSG_FROM_PG:[0159300175D SHA1                   0                                      300430majorgol03                    INIMX_VBNKmajorgol0320200830110829815868<?xml version="1.0" encoding="UTF-8"?>
+<INIpay>
+  <CancelInfo>
+    <ResultCode>170000</ResultCode>
+    <ResultMsg urlencode="1">%C1%A4%BB%F3%C3%B3%B8%AE%B5%C7%BE%FA%BD%C0%B4%CF%B4%D9.</ResultMsg>
+    <SessionKey>ANvzsxuFx05fOsj3ixVqQPzb2J3x1bZRZdad3xsyDnxBmwsRa/+Kntobgdwpy/u7
+V8t4lcZ2MC+QZxu+TBfPXXQaufZgGk5n5jQ6qPkEi169nt3Sykc1U5c/taYfGhf5
+RtoPv6vRpTi7LV2PAxzkn72dhl4si6U2E0G6phiEJB7RjnYqeLu7L4Q=
+</SessionKey>
+    <Encrypted>epnafaq9JOZ9m9qlXcCRcHi6TUVTyIbrTlKmzUVGE4oM3acThC/x03yYM4WxUzMt
+bBYstkgqpvBZwYuJG5jYjaA5hbRFMbjwUNdHVD0/9SeHJZux2cFXolFFpQRiOqZM
+uxaoAxJzYD4Ne4LYnhTD63GVnSEut7kSEIIZ8OV8enqO+V8WwMpR0WXWbUAYsYHH
+KC8OsKhSTMWFJdVoWWILDfaDDjJdAenIxal4onhx/re8pDc1Y3wqgjtVpJTcOHlK
+n/RgQP+amQ1osAMUs/bN072RXVpoTFMVGX3kwvG6NXEYqjtt6vg/ZimvDfCFF60e
+qYGkHyFgDWcoxPDlTydzAFxCh1v/H9is4eGX1nGaykuGsLjc8LfZ+HOodWuCmTMX
+cHXUE7IATEZ3dmgzAqvNpmxjzyPnBVXu9euUByTKV+xNHBt0PNKQvFY9G1WTraXS
+CAVYvl3phRNVz1c4ieHuHe7o/+wv6qes2L3njiaElNj3HgNsL1UrxK7bYDhva7/2
+cRAPIT/2RdC4WkuanLoEt5tm/JtUmGrTSWGQ2yS6rLWJm8SCRlrxsLiIb1h2WEgl
+nnS+jI6jPsw+KR2PCtiklASvFH+5X+zezZpXRYBHxnF/h6fULCbl0QhOKdIdcH3y
+WE6uN2kk2btWFhCWzLG8Tj7/4I5jtzAMQrx3FGjmZOGbfPypJhzKwedg3CUzwfGN
+MNdhNaZkwwBgbXogQl5AwpbUuThdEL2EABM7Wl26b2GYOBl3uQvnguT6rId70XhL
+QHrL8qEEo696PXLhYs50Gg==
+</Encrypted>
+  </CancelInfo>
+  <ManageInfo/>
+  <ReservedInfo>
+    <MReserved1 urlencode="1"></MReserved1>
+    <MReserved2 urlencode="1"></MReserved2>
+    <MReserved3 urlencode="1"></MReserved3>
+    <PGReserved1 urlencode="1"></PGReserved1>
+    <PGReserved2 urlencode="1"></PGReserved2>
+    <PGReserved3 urlencode="1"></PGReserved3>
+  </ReservedInfo>
+</INIpay>
+cF9aag0vX7QkhNBZDLHYxbL7EiNDilKK2LlWGpWeKveWCSD9eQ0eDEghslH5MDGp
+jbE/H2dX37Yt3/49gvoBgoNUGRf/Wy+c0AwNtVfZMpE1hWQ9J00wAUY+Xoi3W143
+u7SMjk3UPL1XGJm58KL+ZdgoteHrmQ/ZL1cgmjBceY8=
+]
+INFO	[2020-08-30 11:13:20:886] <16784> VERIFY OK
+INFO	[2020-08-30 11:13:20:886] <16784> PARSE HEAD OK
+INFO	[2020-08-30 11:13:20:886] <16784> PARSE BODY OK
+INFO	[2020-08-30 11:13:20:887] <16784> DECRYPT OK
+DEBUG	[2020-08-30 11:13:20:887] <16784> DECRYPT MSG:[<?xml version="1.0" encoding="UTF-8"?>
+<CancelInfo>
+  <CancelDate>20200830</CancelDate>
+  <CancelTime>111321</CancelTime>
+  <ResultCode>170000</ResultCode>
+  <ResultMsg urlencode="1">%C1%A4%BB%F3%C3%B3%B8%AE%B5%C7%BE%FA%BD%C0%B4%CF%B4%D9.</ResultMsg>
+  <CSHR_CancelNum></CSHR_CancelNum>
+  <CSHR_CancelDate>20200830</CSHR_CancelDate>
+  <CSHR_CancelTime>111321</CSHR_CancelTime>
+  <CSHR_ResultCode>220000</CSHR_ResultCode>
+  <CSHR_ResultMsg urlencode="1">%C1%A4%BB%F3%C3%B3%B8%AE%B5%C7%BE%FA%BD%C0%B4%CF%B4%D9.</CSHR_ResultMsg>
+  <VACT_FlgRemit urlencode="1"></VACT_FlgRemit>
+</CancelInfo>]
+INFO	[2020-08-30 11:13:20:887] <16784> DECRYPT PARSE OK
+INFO	[2020-08-30 11:13:20:887] <16784> END cancel 정상처리되었습니다. Laptime:[0.185sec]
+INFO	[2020-08-30 11:13:20:887] <16784> ===============================================================

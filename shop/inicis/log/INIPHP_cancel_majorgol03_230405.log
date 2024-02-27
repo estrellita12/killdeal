@@ -1,0 +1,92 @@
+INFO	[2023-04-05 10:05:48:370] <13346> START INIPHP cancel (V5036-141209)(OS:Linux2.6.32-754.11.1.el6.x86_64,PHP:5.3.3)
+DEBUG	[2023-04-05 10:05:48:370] <13346> inipayhome:/home1/killdeal/public_html/shop/inicis
+DEBUG	[2023-04-05 10:05:48:370] <13346> debug:false
+DEBUG	[2023-04-05 10:05:48:370] <13346> type:cancel
+DEBUG	[2023-04-05 10:05:48:370] <13346> mid:majorgol03
+DEBUG	[2023-04-05 10:05:48:370] <13346> admin:1111
+DEBUG	[2023-04-05 10:05:48:370] <13346> tid:INIMX_CARDmajorgol0320230326044323565945
+DEBUG	[2023-04-05 10:05:48:370] <13346> cancelmsg:쇼핑몰 운영자 승인 취소
+INFO	[2023-04-05 10:05:48:370] <13346> Check Field OK
+INFO	[2023-04-05 10:05:48:370] <13346> PI PUB KEY LOAD OK []
+INFO	[2023-04-05 10:05:48:371] <13346> PG PUB KEY LOAD OK [30]
+INFO	[2023-04-05 10:05:48:371] <13346> MERCHANT PRIV KEY LOAD OK
+INFO	[2023-04-05 10:05:48:371] <13346> MERCHANT PUB KEY LOAD OK [0]
+DEBUG	[2023-04-05 10:05:48:372] <13346> MAKE ENCRYPT OK[<?xml version="1.0" encoding="UTF-8"?>
+<CancelInfo>
+	  <CancelTID>INIMX_CARDmajorgol0320230326044323565945</CancelTID>
+	  <CancelMsg urlencode="1">%BC%EE%C7%CE%B8%F4+%BF%EE%BF%B5%C0%DA+%BD%C2%C0%CE+%C3%EB%BC%D2</CancelMsg>
+	  <CancelReason/></CancelInfo>]
+INFO	[2023-04-05 10:05:48:372] <13346> MAKE BODY OK
+INFO	[2023-04-05 10:05:48:373] <13346> SIGN OK
+INFO	[2023-04-05 10:05:48:373] <13346> MAKE HEAD OK
+INFO	[2023-04-05 10:05:48:373] <13346> MSG_TO_PG:[0096200175D SHA1                   0                                      300420majorgol03                    INIMX_CARDmajorgol0320230326044323565945<?xml version="1.0" encoding="UTF-8"?>
+<INIpay>
+	  <CancelInfo>
+	    <SessionKey>1jNceA+ve60aRYT00cw7/wolZ7mCD1s/1De03EZAhm+2M0iUn8CGurRGElAac5f+
+Kdesn+gB7dup7dvcwUBXsusWlorisYdfvPqscMncnToUrlsNixKv5RQhZFCxB8jS
+li4yaNdeSjM4syl8SDrjBtWL0/kcKH4pSjJUsJAb35KCJraVxlJPQA==
+</SessionKey>
+	    <Encrypted>eTwDx6m5PFdm1uUH8wwA0cW1mAC1w4+A8B2m/YNO+ayhA5jP5lbrY0YZGehhqygC
+XT/Bo+x/U7yFHSITAGMNeVwWK8WA2WZaaKgXhB/KouA/291vUcBez5EHNPbLFwq7
+dVzsvPcl77H8UOiRxFm+6sIA3fiaJ5zry4WxS+PQ+8fcIqoVqLbrobtiWrFwO2V+
+36wLSdArTbdYtFsne2VPSElLrb28kMkk2norWg+U0ehHfT8q1WUDyPkMtrx1jVpY
+kGSmBtsAPqE9KjidlZrkyt7cVSia7ezxc/xNj8hhJAIjOPRBU80yz+fRdezriAIZ
+rJJxKYFIcn+FwBPH51KJkw==
+</Encrypted></CancelInfo>
+	  <ReservedInfo>
+	    <MReserved1/>
+	    <MReserved2/>
+	    <MReserved3/></ReservedInfo>
+	  <ManageInfo>
+	    <Language/>
+	    <URL/>
+	    <TXVersion>5036B141209canceLinux     PHPchkfake   2.6.32-754.11.1.el6.x86_64PHP:</TXVersion>
+	    <TXUserID/>
+	    <TXRegNum/></ManageInfo></INIpay>ALYOmHDnQpaPKDdm+WWhrqhTXec9HgwF9xTjgAWFhDX5hrVkrRZcSiFbt++iZn+T
+l6Rz/hfI2qYM9qHBSZpphNhRnYlls6KV5e9m8ixDRXibVEidc2ymkfiDwpqozS74
+X5zvwJT1wJOTvjN6+MUx/hhauxnuzqUOpCnLK4hGh+SI
+]
+INFO	[2023-04-05 10:05:48:373] <13346> DNS LOOKUP OK(203.238.37.3:203.238.37.3:34049) laptime:0
+INFO	[2023-04-05 10:05:48:374] <13346> SOCKET CONNECT OK
+INFO	[2023-04-05 10:05:48:374] <13346> SEND OK
+INFO	[2023-04-05 10:05:48:566] <13346> RECV OK
+INFO	[2023-04-05 10:05:48:566] <13346> MSG_FROM_PG:[0093300175D SHA1                   0                                      300430majorgol03                    INIMX_CARDmajorgol0320230326044323565945<?xml version="1.0" encoding="UTF-8"?><INIpay>
+<CancelInfo>
+<ResultCode>120000</ResultCode>
+<ResultMsg urlencode="1">%C1%A4%BB%F3%C3%B3%B8%AE%B5%C7%BE%FA%BD%C0%B4%CF%B4%D9.</ResultMsg>
+<SessionKey>APq2F6PMmI9qk1XB94wow69hxs6tzj+lj4SOgd7dA6RDhQkEV+kn+291U7t4cVfU
+GCXkkHEhc/NxaW7jwwoiE7DiA87s0ft+sh3MwCVXU1WOvc2OFf2avKNKEPQ0q5JF
+8hSSkzNeGi2cih8hjkdwe7ZYGradJWZWf/sQQvizdyNWjBn94hDwqW8=
+</SessionKey>
+<Encrypted>A50/q3MMvoeXSlEay9DokMmHXhY4f9OSPVMYd9dKZtC52Q/CTZuz3j4OD3uwKQ9A
+oCBq9+EbsORnOeD5fGQ+NyKOOx/dl8bMmwiSVU+LVxHdKg+raRC+t23wxy+MjDmP
+dwurSHWOwGZOkHY2Hc22vL2TjDCrx0dWPByW2B/4d577nYGfv/HeHdjkhWzQ3jNg
+udlQP3ayjA8QdD1nK0X1x5LD1kK94YtCp6GJE9rtrV+VbLADAde4a8qo/v9grkAe
+X2sRdVpra7w9FxKjsOOfR/hMP6wUvWiMYbow0NvdGZkos+ZoZoeTb6kXvqdWWXVa
+C/mZxbAteV11ZGZhKmrIpNX+nrnVJwmh
+</Encrypted>
+</CancelInfo>
+<ManageInfo/>
+<ReservedInfo>
+<MReserved1 urlencode="1"/>
+<MReserved2 urlencode="1"/>
+<MReserved3 urlencode="1"/>
+</ReservedInfo>
+</INIpay>
+sl/6iAahw0loAw/++jWWH32Xd20Ob0xOKaqqfgCf1BGVjgZ4Ils6Gx6GAt/lAfZ4
+2EQs5RkoFb6NVUNscKaYGcFzQaAYpuBokjSIKEjPTRO6pOlPsQWqSdJxo8OFq3qY
+Qp7xhqQ3O7nSu0NBBgNxhe1afTvKbZ/qSMP02C08Mvw=
+]
+INFO	[2023-04-05 10:05:48:566] <13346> VERIFY OK
+INFO	[2023-04-05 10:05:48:566] <13346> PARSE HEAD OK
+INFO	[2023-04-05 10:05:48:567] <13346> PARSE BODY OK
+INFO	[2023-04-05 10:05:48:567] <13346> DECRYPT OK
+DEBUG	[2023-04-05 10:05:48:567] <13346> DECRYPT MSG:[<?xml version="1.0" encoding="UTF-8"?><CancelInfo>
+<CancelDate>20230405</CancelDate>
+<CancelTime>100549</CancelTime>
+<ResultCode>120000</ResultCode>
+<ResultMsg urlencode="1">%C1%A4%BB%F3%C3%B3%B8%AE%B5%C7%BE%FA%BD%C0%B4%CF%B4%D9.</ResultMsg>
+</CancelInfo>]
+INFO	[2023-04-05 10:05:48:567] <13346> DECRYPT PARSE OK
+INFO	[2023-04-05 10:05:48:567] <13346> END cancel 정상처리되었습니다. Laptime:[0.197sec]
+INFO	[2023-04-05 10:05:48:567] <13346> ===============================================================

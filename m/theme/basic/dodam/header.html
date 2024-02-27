@@ -1,0 +1,153 @@
+<style>
+ #commentWrapper { /* required to avoid jumping */      
+      position: absolute;
+      left: 0;
+      bottom:0;
+      z-index:10;
+    }
+#comment {
+	  /*display:none;*/
+	  display:block;
+      /*position: absolute;*/
+	  position: fixed;
+      bottom: 50px;
+    }
+    #comment.fixed {
+	  display:block;
+      position: fixed;
+      bottom: 50px;
+    }
+</style>
+<!-- 고정영역 스크립트 -->
+<script>
+$(function () {
+  var msie6 = $.browser == 'msie' && $.browser.version < 7;
+  if (!msie6) {
+    var top = $('#comment').offset().top - parseFloat($('#comment').css('margin-top').replace(/auto/, 0));
+    $(window).scroll(function (event) {
+      // what the y position of the scroll is
+      var y = $(this).scrollTop();
+      
+      // whether that's below the form
+      if (y > top) {
+        // if so, ad the fixed class
+        $('#comment').addClass('fixed');
+      } else {
+        // otherwise remove it
+        $('#comment').removeClass('fixed');
+      }
+    });
+  }  
+});
+</script>
+<script type="text/javascript">
+    $(document).ready(function() {
+      $('#close').click(function(e) {
+		e.preventDefault()
+        $('#commentWrapper').hide();
+      });
+    });
+ </script>
+<!-- 고정영역 스크립트 -->
+
+<script type="text/javascript">
+	$(function(){
+		// 검색폼 여닫기
+		$("#layout_header a[href='#search']").click(function(){
+			if($("#layout_header form.search_form").is(":visible")){
+				$("#layout_header form.search_form").hide();
+				$("#top_search").attr('class','top_search');
+			}else{
+				$("#layout_header form.search_form").show();
+				$("#layout_header form.search_form input.search_text").focus();
+				$("#top_search").attr('class','top_close');
+			}
+			return false;
+		});
+
+		// 검색폼입력창 배경
+		$("#layout_header form.search_form input.search_text").bind('change keyup',function(){
+			if($(this).val().length){
+				$(this).removeClass('search_text_bg');
+			}else{
+				$(this).addClass('search_text_bg');
+			}
+		}).change();
+
+		// 장바구니로 가기
+		$("#layout_header a[href='#cart']").click(function(){
+			document.location.href='/order/cart';
+		});
+
+		{?uri_string()=='goods/search'}
+		$("#top_search").attr('class','top_close');
+		{/}
+	});
+</script>
+
+
+
+<!-- 상단영역 : 시작 -->
+<div id="layout_header" class="layout_header" style="background:#fff!important;">
+	<!--<h1><a href="/main/index">{config_basic.shopName}</a></h1>-->
+	<h1><a href="/main/index" target='_self'><img src="/data/skin/dodamchon_renewal/images/m_logo.png" title="" alt=""/></a></h1>
+	<a href="#category" class="top_menu" style="background:url(/data/skin/dodamchon_renewal/images/common/mobile_icon1.png) no-repeat 50% 50% !important; background-size:100%!important;">카테고리</a>
+	<a href="#cart" class="top_cart" id="top_cart" style="background:url(/data/skin/dodamchon_renewal/images/common/mobile_icon3.png) no-repeat 50% 50% !important; background-size:100%!important;">장바구니{?push_count_cart}<span class="pushCount header">{push_count_cart}</span>{/}</a>
+	<a href="#search" class="top_search" id="top_search" style="background:url(/data/skin/dodamchon_renewal/images/common/mobile_icon2.png) no-repeat 50% 50%!important; background-size:100%!important;">검색</a>
+
+	<h2 class="hide">상품검색</h2>
+	<form action="../goods/search" class="search_form {?uri_string()!='goods/search'}hide{/}">
+		<input type="hidden" name="keyword_log_flag" value="Y" />
+		<table width="100%" border="0" cellpadding="0" cellspacing="0">
+		<tr>
+			<td><input type="text" name="search_text" value="" class="search_text" /></td>
+			<td width="5"></td>
+			<td width="25"><input type="submit" class="search_btn" value="검색" style="border:1px solid #c80000!important; background:#c80000!important;" /></td>
+		</tr>
+		</table>
+	</form>
+	
+</div>
+<!-- 상단영역 : 끝 -->
+
+<!-- 퀵메뉴 영역 : 시작 -->
+<!--{ ? uri_string()=='goods/view_contents' || (uri_string()=='board' && _GET.id=='goods_review') }-->
+<!-- {//=showGoodsOrderForm(_GET.no)} -->
+<!--{:}-->
+<!-- <div id="quick_layer">
+	<table class="common_quick">
+	<col width="25%" />
+	<col width="25%" />
+	<col width="25%" />
+	<col width="25%" />
+	<tr>
+		<td><a href="/main/index"><img src="../images/design/ftr_home.png" width="25" height="24" vspace="2" /><br />홈</a></td>
+		<td><a href="/order/cart" class="relative"><img src="../images/design/ftr_cart.png" width="26" height="24" vspace="2" /><br />장바구니{?push_count_cart}<span class="pushCount" style="position:absolute;top:0px;right:5px;">{push_count_cart}</span>{/}</a></td>
+		<td><a href="/mypage/order_catalog?step_type=order" class="relative"><img src="../images/design/ftr_delivery.png" width="26" height="24" vspace="2" /><br />주문/배송{?push_count_order}<span class="pushCount" style="position:absolute;top:0px;right:5px;">{push_count_order}</span>{/}</a></td>
+		<td><a href="../mypage/index"><img src="../images/design/ftr_mypage.png" width="21" height="24" vspace="2" /><br />마이페이지</a></td>
+	</tr>
+	</table>
+</div> -->
+<!--{/}-->
+<!-- 퀵메뉴 영역 : 끝 -->
+
+<!--고정영역-->
+<div id="commentWrapper">
+    <div id="comment">
+		{ ? userInfo.group_seq == '2' || userInfo.group_seq == '6'}
+        <a href='' target='_self'><img src="../images/common/donga_mall_circle_m.png" title="동아복지몰가기" alt="동아복지몰가기" usemap="#Map" border="0" width="50%"></a>
+        <map name="Map" id="Map">
+          <area shape="rect" coords="28,47,217,199" href="/goods/catalog?code=00060012" />
+          <area shape="rect" coords="83,204,166,234" id="close" href="#"/>
+        </map>
+		{/}
+  </div>
+</div>
+<!--고정영역-->
+
+
+
+<div class="mobile_wrap">
+
+
+
